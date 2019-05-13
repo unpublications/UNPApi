@@ -1,0 +1,1654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DoctorPortalDBModelStoreContainer" CdmEntityContainer="DoctorPortalDBEntities">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_AddDependent">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_AddDependent">
+        <MappingFragment StoreEntitySet="PP_AddDependent">
+          <ScalarProperty Name="AddDependentID" ColumnName="AddDependentID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RelationWithMe" ColumnName="RelationWithMe" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RelationwithmeArabic" ColumnName="RelationwithmeArabic" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_AppLanguage">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_AppLanguage">
+        <MappingFragment StoreEntitySet="PP_AppLanguage">
+          <ScalarProperty Name="AppLanguageId" ColumnName="AppLanguageId" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Appointment">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Appointment">
+        <MappingFragment StoreEntitySet="PP_Appointment">
+          <ScalarProperty Name="Appointment_ID" ColumnName="Appointment_ID" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+          <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+          <ScalarProperty Name="AppointmentType_ID" ColumnName="AppointmentType_ID" />
+          <ScalarProperty Name="Specialization_ID" ColumnName="Specialization_ID" />
+          <ScalarProperty Name="Specialization_Name" ColumnName="Specialization_Name" />
+          <ScalarProperty Name="Doctor_ID" ColumnName="Doctor_ID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DoctorName_Ar" ColumnName="DoctorName_Ar" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Shift_Type" ColumnName="Shift_Type" />
+          <ScalarProperty Name="Time_Slot" ColumnName="Time_Slot" />
+          <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+          <ScalarProperty Name="Visited" ColumnName="Visited" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="StatusChangedDate" ColumnName="StatusChangedDate" />
+          <ScalarProperty Name="StatusChangedBy" ColumnName="StatusChangedBy" />
+          <ScalarProperty Name="Specialization_Name_Ar" ColumnName="Specialization_Name_Ar" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Ar" ColumnName="Department_Name_Ar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_AppointmentType">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_AppointmentType">
+        <MappingFragment StoreEntitySet="PP_AppointmentType">
+          <ScalarProperty Name="AppointmentType_ID" ColumnName="AppointmentType_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title_ar" ColumnName="Title_ar" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_AppSetting">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_AppSetting">
+        <MappingFragment StoreEntitySet="PP_AppSetting">
+          <ScalarProperty Name="AppSettingId" ColumnName="AppSettingId" />
+          <ScalarProperty Name="Setting_Key" ColumnName="Setting_Key" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Multilingual" ColumnName="Multilingual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_AppSettingTranslation">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_AppSettingTranslation">
+        <MappingFragment StoreEntitySet="PP_AppSettingTranslation">
+          <ScalarProperty Name="AppSettingTranslationId" ColumnName="AppSettingTranslationId" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+          <ScalarProperty Name="AppSettingId" ColumnName="AppSettingId" />
+          <ScalarProperty Name="Setting_Value" ColumnName="Setting_Value" />
+          <ScalarProperty Name="AppLanguageId" ColumnName="AppLanguageId" />
+          <ScalarProperty Name="IsBaseLang" ColumnName="IsBaseLang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_AppversionCheck">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_AppversionCheck">
+        <MappingFragment StoreEntitySet="PP_AppversionCheck">
+          <ScalarProperty Name="versionID" ColumnName="versionID" />
+          <ScalarProperty Name="AndroidversionNo" ColumnName="AndroidversionNo" />
+          <ScalarProperty Name="iosversionNo" ColumnName="iosversionNo" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDatetime" ColumnName="CreatedDatetime" />
+          <ScalarProperty Name="androidamendDate" ColumnName="androidamendDate" />
+          <ScalarProperty Name="iosAmendDate" ColumnName="iosAmendDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Department_Main">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Department_Main">
+        <MappingFragment StoreEntitySet="PP_Department_Main">
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Arabic" ColumnName="Department_Name_Arabic" />
+          <ScalarProperty Name="Department_Type_Code" ColumnName="Department_Type_Code" />
+          <ScalarProperty Name="Speciality_Code" ColumnName="Speciality_Code" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_Date" ColumnName="Last_Changed_Date" />
+          <ScalarProperty Name="IsMedical" ColumnName="IsMedical" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Doctor_Appointment">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Doctor_Appointment">
+        <MappingFragment StoreEntitySet="PP_Doctor_Appointment">
+          <ScalarProperty Name="Appointment_Code" ColumnName="Appointment_Code" />
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Appointment_Type" ColumnName="Appointment_Type" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Encounter_No" ColumnName="Encounter_No" />
+          <ScalarProperty Name="Registration_No" ColumnName="Registration_No" />
+          <ScalarProperty Name="From_Time" ColumnName="From_Time" />
+          <ScalarProperty Name="To_Time" ColumnName="To_Time" />
+          <ScalarProperty Name="Shift_type" ColumnName="Shift_type" />
+          <ScalarProperty Name="Appointment_Source" ColumnName="Appointment_Source" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="LastModifiedById" ColumnName="LastModifiedById" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="CancelDate" ColumnName="CancelDate" />
+          <ScalarProperty Name="EncodedDate" ColumnName="EncodedDate" />
+          <ScalarProperty Name="Appointment_No" ColumnName="Appointment_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Doctor_Capacity">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Doctor_Capacity">
+        <MappingFragment StoreEntitySet="PP_Doctor_Capacity">
+          <ScalarProperty Name="Rec_ID" ColumnName="Rec_ID" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Date_Capacity" ColumnName="Date_Capacity" />
+          <ScalarProperty Name="Shift_Capacity" ColumnName="Shift_Capacity" />
+          <ScalarProperty Name="Booked_Capacity" ColumnName="Booked_Capacity" />
+          <ScalarProperty Name="New_Capacity" ColumnName="New_Capacity" />
+          <ScalarProperty Name="WalkIn_Capacity" ColumnName="WalkIn_Capacity" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_Date" ColumnName="Last_Changed_Date" />
+          <ScalarProperty Name="Aramco_Capacity" ColumnName="Aramco_Capacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Doctor_Leave">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Doctor_Leave">
+        <MappingFragment StoreEntitySet="PP_Doctor_Leave">
+          <ScalarProperty Name="Leave_ID" ColumnName="Leave_ID" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="Leave_Type" ColumnName="Leave_Type" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_Date" ColumnName="Last_Changed_Date" />
+          <ScalarProperty Name="HIS_Leave_ID" ColumnName="HIS_Leave_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Doctor_Periodic_Timechange">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Doctor_Periodic_Timechange">
+        <MappingFragment StoreEntitySet="PP_Doctor_Periodic_Timechange">
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="From_period" ColumnName="From_period" />
+          <ScalarProperty Name="To_period" ColumnName="To_period" />
+          <ScalarProperty Name="Shift_one_from" ColumnName="Shift_one_from" />
+          <ScalarProperty Name="Shift_one_to" ColumnName="Shift_one_to" />
+          <ScalarProperty Name="Shift_second_from" ColumnName="Shift_second_from" />
+          <ScalarProperty Name="Shift_second_to" ColumnName="Shift_second_to" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_Date" ColumnName="Last_Changed_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Doctor_Time">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Doctor_Time">
+        <MappingFragment StoreEntitySet="PP_Doctor_Time">
+          <ScalarProperty Name="doctor_code" ColumnName="doctor_code" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="shift_one_from" ColumnName="shift_one_from" />
+          <ScalarProperty Name="shift_one_to" ColumnName="shift_one_to" />
+          <ScalarProperty Name="shift_second_from" ColumnName="shift_second_from" />
+          <ScalarProperty Name="shift_second_to" ColumnName="shift_second_to" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_date" ColumnName="Last_Changed_date" />
+          <ScalarProperty Name="FirstSlotForFirstShift" ColumnName="FirstSlotForFirstShift" />
+          <ScalarProperty Name="LastSlotForFirstShift" ColumnName="LastSlotForFirstShift" />
+          <ScalarProperty Name="FirstSlotForSecondShift" ColumnName="FirstSlotForSecondShift" />
+          <ScalarProperty Name="LastSlotForSecondShift" ColumnName="LastSlotForSecondShift" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_FacilityMaster">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_FacilityMaster">
+        <MappingFragment StoreEntitySet="PP_FacilityMaster">
+          <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+          <ScalarProperty Name="HospitalLocationID" ColumnName="HospitalLocationID" />
+          <ScalarProperty Name="AR_Name" ColumnName="AR_Name" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TimeZoneId" ColumnName="TimeZoneId" />
+          <ScalarProperty Name="TimeZoneOffSetMinutes" ColumnName="TimeZoneOffSetMinutes" />
+          <ScalarProperty Name="LinkServerName" ColumnName="LinkServerName" />
+          <ScalarProperty Name="LinkServerLISDBName" ColumnName="LinkServerLISDBName" />
+          <ScalarProperty Name="LinkServerHISDBName" ColumnName="LinkServerHISDBName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EncodedBy" ColumnName="EncodedBy" />
+          <ScalarProperty Name="EncodedDate" ColumnName="EncodedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="DirectAppointment" ColumnName="DirectAppointment" />
+          <ScalarProperty Name="LinkHistServerName" ColumnName="LinkHistServerName" />
+          <ScalarProperty Name="LinkHistServerLISDBName" ColumnName="LinkHistServerLISDBName" />
+          <ScalarProperty Name="BranchLocationCode" ColumnName="BranchLocationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Feedback">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Feedback">
+        <MappingFragment StoreEntitySet="PP_Feedback">
+          <ScalarProperty Name="FeedbackId" ColumnName="FeedbackId" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="FeedbackDescription" ColumnName="FeedbackDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="PatientRegId" ColumnName="PatientRegId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_FeedbackIT">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_FeedbackIT">
+        <MappingFragment StoreEntitySet="PP_FeedbackIT">
+          <ScalarProperty Name="FeedbackId" ColumnName="FeedbackId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="FeedbackDescription" ColumnName="FeedbackDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="FeedbackTypeId" ColumnName="FeedbackTypeId" />
+          <ScalarProperty Name="PatientRegId" ColumnName="PatientRegId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_FeedbackTypes">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_FeedbackTypes">
+        <MappingFragment StoreEntitySet="PP_FeedbackTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionAr" ColumnName="DescriptionAr" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="AmendDatetime" ColumnName="AmendDatetime" />
+          <ScalarProperty Name="AmendBy" ColumnName="AmendBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_GlobalMessgeFlag">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_GlobalMessgeFlag">
+        <MappingFragment StoreEntitySet="PP_GlobalMessgeFlag">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="ShowMessge" ColumnName="ShowMessge" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_LabReports">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_LabReports">
+        <MappingFragment StoreEntitySet="PP_LabReports">
+          <ScalarProperty Name="LabReportId" ColumnName="LabReportId" />
+          <ScalarProperty Name="LabReportEnName" ColumnName="LabReportEnName" />
+          <ScalarProperty Name="LabReportArName" ColumnName="LabReportArName" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="ICDDescription" ColumnName="ICDDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Location">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Location">
+        <MappingFragment StoreEntitySet="PP_Location">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+          <ScalarProperty Name="LocationArName" ColumnName="LocationArName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_LocationWiseDepartments">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_LocationWiseDepartments">
+        <MappingFragment StoreEntitySet="PP_LocationWiseDepartments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Marital">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Marital">
+        <MappingFragment StoreEntitySet="PP_Marital">
+          <ScalarProperty Name="MaritalID" ColumnName="MaritalID" />
+          <ScalarProperty Name="MaritalEnStatus" ColumnName="MaritalEnStatus" />
+          <ScalarProperty Name="MaritalArStatus" ColumnName="MaritalArStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_MedicalReport_Requests">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_MedicalReport_Requests">
+        <MappingFragment StoreEntitySet="PP_MedicalReport_Requests">
+          <ScalarProperty Name="MedicalReportRecId" ColumnName="MedicalReportRecId" />
+          <ScalarProperty Name="MedicalReportUserId" ColumnName="MedicalReportUserId" />
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PreferedDatetime" ColumnName="PreferedDatetime" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="SpecializationCode" ColumnName="SpecializationCode" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="ReplyDatetime" ColumnName="ReplyDatetime" />
+          <ScalarProperty Name="InsertDatetime" ColumnName="InsertDatetime" />
+          <ScalarProperty Name="InsertBy" ColumnName="InsertBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_MedicalReports">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_MedicalReports">
+        <MappingFragment StoreEntitySet="PP_MedicalReports">
+          <ScalarProperty Name="MedicalReportId" ColumnName="MedicalReportId" />
+          <ScalarProperty Name="MedicalReportEnName" ColumnName="MedicalReportEnName" />
+          <ScalarProperty Name="MedicalReportArName" ColumnName="MedicalReportArName" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="ICDDescription" ColumnName="ICDDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Nationality">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Nationality">
+        <MappingFragment StoreEntitySet="PP_Nationality">
+          <ScalarProperty Name="NationalityRecId" ColumnName="NationalityRecId" />
+          <ScalarProperty Name="NationalityEnName" ColumnName="NationalityEnName" />
+          <ScalarProperty Name="NationalityArName" ColumnName="NationalityArName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_News">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_News">
+        <MappingFragment StoreEntitySet="PP_News">
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Notifications">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Notifications">
+        <MappingFragment StoreEntitySet="PP_Notifications">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="PatientRegId" ColumnName="PatientRegId" />
+          <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+          <ScalarProperty Name="NotificationMessage" ColumnName="NotificationMessage" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="ReadDatetime" ColumnName="ReadDatetime" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Offers">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Offers">
+        <MappingFragment StoreEntitySet="PP_Offers">
+          <ScalarProperty Name="OfferRecId" ColumnName="OfferRecId" />
+          <ScalarProperty Name="OfferDescription" ColumnName="OfferDescription" />
+          <ScalarProperty Name="OfferDetails" ColumnName="OfferDetails" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StartDatetime" ColumnName="StartDatetime" />
+          <ScalarProperty Name="EndDatetime" ColumnName="EndDatetime" />
+          <ScalarProperty Name="InsertDatetime" ColumnName="InsertDatetime" />
+          <ScalarProperty Name="InsertBy" ColumnName="InsertBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Packages">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Packages">
+        <MappingFragment StoreEntitySet="PP_Packages">
+          <ScalarProperty Name="PackageRecId" ColumnName="PackageRecId" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="PackageDetails" ColumnName="PackageDetails" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="InsertDatetime" ColumnName="InsertDatetime" />
+          <ScalarProperty Name="InsertBy" ColumnName="InsertBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Patient">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Patient">
+        <MappingFragment StoreEntitySet="PP_Patient">
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Registration_No" ColumnName="Registration_No" />
+          <ScalarProperty Name="Gardian_ID" ColumnName="Gardian_ID" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="Nationality_ID" ColumnName="Nationality_ID" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+          <ScalarProperty Name="HospitalLocationID" ColumnName="HospitalLocationID" />
+          <ScalarProperty Name="Verified" ColumnName="Verified" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_PatientEducation">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_PatientEducation">
+        <MappingFragment StoreEntitySet="PP_PatientEducation">
+          <ScalarProperty Name="PatientEducationId" ColumnName="PatientEducationId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="FilenameArabic" ColumnName="FilenameArabic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_PatientRegistration">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_PatientRegistration">
+        <MappingFragment StoreEntitySet="PP_PatientRegistration">
+          <ScalarProperty Name="PatientRegistrationRecId" ColumnName="PatientRegistrationRecId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaterityStatus" ColumnName="MaterityStatus" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="NationalIDorIqamaID" ColumnName="NationalIDorIqamaID" />
+          <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="RelationShip" ColumnName="RelationShip" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="NextOfKinName" ColumnName="NextOfKinName" />
+          <ScalarProperty Name="NextOfKinMobileNo" ColumnName="NextOfKinMobileNo" />
+          <ScalarProperty Name="VerificationStatus" ColumnName="VerificationStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsAramcoPatient" ColumnName="IsAramcoPatient" />
+          <ScalarProperty Name="IsSearchDone" ColumnName="IsSearchDone" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="IsAlreadyRegistered" ColumnName="IsAlreadyRegistered" />
+          <ScalarProperty Name="ShowMessage" ColumnName="ShowMessage" />
+          <ScalarProperty Name="NotificationMessage" ColumnName="NotificationMessage" />
+          <ScalarProperty Name="IsForIT" ColumnName="IsForIT" />
+          <ScalarProperty Name="BlockAppointments" ColumnName="BlockAppointments" />
+          <ScalarProperty Name="InsuranceType" ColumnName="InsuranceType" />
+          <ScalarProperty Name="AramcoID" ColumnName="AramcoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_PatientReports">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_PatientReports">
+        <MappingFragment StoreEntitySet="PP_PatientReports">
+          <ScalarProperty Name="PatientReportId" ColumnName="PatientReportId" />
+          <ScalarProperty Name="PatientReportEnName" ColumnName="PatientReportEnName" />
+          <ScalarProperty Name="PatientReportArName" ColumnName="PatientReportArName" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="ICDDescription" ColumnName="ICDDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_PatientRequest">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_PatientRequest">
+        <MappingFragment StoreEntitySet="PP_PatientRequest">
+          <ScalarProperty Name="PatientRequestId" ColumnName="PatientRequestId" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="SpecilizationId" ColumnName="SpecilizationId" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          <ScalarProperty Name="PlannedReleaseDate" ColumnName="PlannedReleaseDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="RequestStatus" ColumnName="RequestStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PatientRegId" ColumnName="PatientRegId" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="ReplyDatetime" ColumnName="ReplyDatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Registration">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Registration">
+        <MappingFragment StoreEntitySet="PP_Registration">
+          <ScalarProperty Name="Rec_ID" ColumnName="Rec_ID" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="GrandFather_Name" ColumnName="GrandFather_Name" />
+          <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Marital_Status_Id" ColumnName="Marital_Status_Id" />
+          <ScalarProperty Name="Nationality_Id" ColumnName="Nationality_Id" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="First_Name_Arabic" ColumnName="First_Name_Arabic" />
+          <ScalarProperty Name="Father_Name_Arabic" ColumnName="Father_Name_Arabic" />
+          <ScalarProperty Name="GrandFather_Name_Arabic" ColumnName="GrandFather_Name_Arabic" />
+          <ScalarProperty Name="Family_Name_Arabic" ColumnName="Family_Name_Arabic" />
+          <ScalarProperty Name="MovedToHIS" ColumnName="MovedToHIS" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Religion">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Religion">
+        <MappingFragment StoreEntitySet="PP_Religion">
+          <ScalarProperty Name="ReligionRecId" ColumnName="ReligionRecId" />
+          <ScalarProperty Name="ReligionEnName" ColumnName="ReligionEnName" />
+          <ScalarProperty Name="ReligionArName" ColumnName="ReligionArName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_SickLeaves">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_SickLeaves">
+        <MappingFragment StoreEntitySet="PP_SickLeaves">
+          <ScalarProperty Name="SickleaveRecId" ColumnName="SickleaveRecId" />
+          <ScalarProperty Name="SickleaveUserId" ColumnName="SickleaveUserId" />
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PreferedDatetime" ColumnName="PreferedDatetime" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="SpecializationCode" ColumnName="SpecializationCode" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="ReplyDatetime" ColumnName="ReplyDatetime" />
+          <ScalarProperty Name="InsertDatetime" ColumnName="InsertDatetime" />
+          <ScalarProperty Name="InsertBy" ColumnName="InsertBy" />
+          <ScalarProperty Name="LeaveStatus" ColumnName="LeaveStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Wala">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Wala">
+        <MappingFragment StoreEntitySet="PP_Wala">
+          <ScalarProperty Name="walaId" ColumnName="walaId" />
+          <ScalarProperty Name="PatientRegId" ColumnName="PatientRegId" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="InsertDatetime" ColumnName="InsertDatetime" />
+          <ScalarProperty Name="InsertBy" ColumnName="InsertBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="testusers">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.testuser">
+        <MappingFragment StoreEntitySet="testusers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mr_no" ColumnName="mr_no" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="iqama" ColumnName="iqama" />
+          <ScalarProperty Name="hospital_id" ColumnName="hospital_id" />
+          <ScalarProperty Name="pr_no" ColumnName="pr_no" />
+          <ScalarProperty Name="sms_validation_code" ColumnName="sms_validation_code" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="logins" ColumnName="logins" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="last_login" ColumnName="last_login" />
+          <ScalarProperty Name="vcstatus" ColumnName="vcstatus" />
+          <ScalarProperty Name="devicetype" ColumnName="devicetype" />
+          <ScalarProperty Name="deviceid" ColumnName="deviceid" />
+          <ScalarProperty Name="device_id" ColumnName="device_id" />
+          <ScalarProperty Name="alertstatus" ColumnName="alertstatus" />
+          <ScalarProperty Name="rdate" ColumnName="rdate" />
+          <ScalarProperty Name="language_type" ColumnName="language_type" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="testusers2">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.testusers2">
+        <MappingFragment StoreEntitySet="testusers2">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mr_no" ColumnName="mr_no" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="iqama" ColumnName="iqama" />
+          <ScalarProperty Name="hospital_id" ColumnName="hospital_id" />
+          <ScalarProperty Name="pr_no" ColumnName="pr_no" />
+          <ScalarProperty Name="sms_validation_code" ColumnName="sms_validation_code" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="logins" ColumnName="logins" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="last_login" ColumnName="last_login" />
+          <ScalarProperty Name="vcstatus" ColumnName="vcstatus" />
+          <ScalarProperty Name="devicetype" ColumnName="devicetype" />
+          <ScalarProperty Name="deviceid" ColumnName="deviceid" />
+          <ScalarProperty Name="device_id" ColumnName="device_id" />
+          <ScalarProperty Name="alertstatus" ColumnName="alertstatus" />
+          <ScalarProperty Name="rdate" ColumnName="rdate" />
+          <ScalarProperty Name="language_type" ColumnName="language_type" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Doctor_Master">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Doctor_Master">
+        <MappingFragment StoreEntitySet="PP_Doctor_Master">
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Doctor_Name_Arabic" ColumnName="Doctor_Name_Arabic" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Specialization_Code" ColumnName="Specialization_Code" />
+          <ScalarProperty Name="Department_code" ColumnName="Department_code" />
+          <ScalarProperty Name="FirstSlotForFirstShift" ColumnName="FirstSlotForFirstShift" />
+          <ScalarProperty Name="LastSlotForFirstShift" ColumnName="LastSlotForFirstShift" />
+          <ScalarProperty Name="FirstSlotForSecondShift" ColumnName="FirstSlotForSecondShift" />
+          <ScalarProperty Name="LastSlotForSecondShift" ColumnName="LastSlotForSecondShift" />
+          <ScalarProperty Name="IsOPDAppointment" ColumnName="IsOPDAppointment" />
+          <ScalarProperty Name="Doctor_Title" ColumnName="Doctor_Title" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Education_Ar" ColumnName="Education_Ar" />
+          <ScalarProperty Name="Res_Phone" ColumnName="Res_Phone" />
+          <ScalarProperty Name="Mob_Phone" ColumnName="Mob_Phone" />
+          <ScalarProperty Name="Work_Phone" ColumnName="Work_Phone" />
+          <ScalarProperty Name="App_Phone" ColumnName="App_Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="ResearchPublications" ColumnName="ResearchPublications" />
+          <ScalarProperty Name="Memberships" ColumnName="Memberships" />
+          <ScalarProperty Name="LangEnglish" ColumnName="LangEnglish" />
+          <ScalarProperty Name="LangArabic" ColumnName="LangArabic" />
+          <ScalarProperty Name="LangHindi" ColumnName="LangHindi" />
+          <ScalarProperty Name="LangTagalog" ColumnName="LangTagalog" />
+          <ScalarProperty Name="LangFrench" ColumnName="LangFrench" />
+          <ScalarProperty Name="DocImage" ColumnName="DocImage" />
+          <ScalarProperty Name="IsAramcoAppointment" ColumnName="IsAramcoAppointment" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="IsHOD" ColumnName="IsHOD" />
+          <ScalarProperty Name="HODText" ColumnName="HODText" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDatetime" ColumnName="LastChangedDatetime" />
+          <ScalarProperty Name="Designation_Ar" ColumnName="Designation_Ar" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Description_Ar" ColumnName="Description_Ar" />
+          <ScalarProperty Name="DoctorPassword" ColumnName="DoctorPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_PharmacyRefillsRequest">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_PharmacyRefillsRequest">
+        <MappingFragment StoreEntitySet="PP_PharmacyRefillsRequest">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+          <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="PreferredDateToCollect" ColumnName="PreferredDateToCollect" />
+          <ScalarProperty Name="PreferredTimeToCollect" ColumnName="PreferredTimeToCollect" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+          <ScalarProperty Name="ReplyDateTime" ColumnName="ReplyDateTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EncodedDate" ColumnName="EncodedDate" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PP_Specialisations">
+      <EntityTypeMapping TypeName="DoctorPortalDBModel.PP_Specialisations">
+        <MappingFragment StoreEntitySet="PP_Specialisations">
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Specialisation_Location" ColumnName="Specialisation_Location" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ForPortal" ColumnName="ForPortal" />
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Specialisation_Code" ColumnName="Specialisation_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="DoctorPortalDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionName="DoctorPortalDBModel.Store.split" FunctionImportName="split">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.split_Result">
+          <ScalarProperty Name="entry" ColumnName="entry" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DoctorPortalDBModel.Store.Splitstring" FunctionImportName="Splitstring">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.Splitstring_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_AddDependents" FunctionName="DoctorPortalDBModel.Store.PP_AddDependents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_AddDependents_Result">
+          <ScalarProperty Name="AddDependentID" ColumnName="AddDependentID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RelationWithMe" ColumnName="RelationWithMe" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RelationwithmeArabic" ColumnName="RelationwithmeArabic" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_AppointmentAvailTimes" FunctionName="DoctorPortalDBModel.Store.PP_AppointmentAvailTimes" />
+    <FunctionImportMapping FunctionImportName="PP_AvailableSlots" FunctionName="DoctorPortalDBModel.Store.PP_AvailableSlots" />
+    <FunctionImportMapping FunctionImportName="PP_DeleteDepartments" FunctionName="DoctorPortalDBModel.Store.PP_DeleteDepartments" />
+    <FunctionImportMapping FunctionImportName="PP_DeleteDoctors" FunctionName="DoctorPortalDBModel.Store.PP_DeleteDoctors" />
+    <FunctionImportMapping FunctionImportName="PP_DeleteLocations" FunctionName="DoctorPortalDBModel.Store.PP_DeleteLocations" />
+    <FunctionImportMapping FunctionImportName="PP_Doctor_Appointments" FunctionName="DoctorPortalDBModel.Store.PP_Doctor_Appointments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_Doctor_Appointments_Result">
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Shift_type" ColumnName="Shift_type" />
+          <ScalarProperty Name="Appointment_Source" ColumnName="Appointment_Source" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Appointment_No" ColumnName="Appointment_No" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Doctor_Name_Arabic" ColumnName="Doctor_Name_Arabic" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+          <ScalarProperty Name="LocationArName" ColumnName="LocationArName" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Arabic" ColumnName="Department_Name_Arabic" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_Doctor_Appointments_Canceled" FunctionName="DoctorPortalDBModel.Store.PP_Doctor_Appointments_Canceled" />
+    <FunctionImportMapping FunctionImportName="PP_GetDepartments" FunctionName="DoctorPortalDBModel.Store.PP_GetDepartments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetDepartments_Result">
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Arabic" ColumnName="Department_Name_Arabic" />
+          <ScalarProperty Name="Department_Type_Code" ColumnName="Department_Type_Code" />
+          <ScalarProperty Name="Speciality_Code" ColumnName="Speciality_Code" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_Date" ColumnName="Last_Changed_Date" />
+          <ScalarProperty Name="IsMedical" ColumnName="IsMedical" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetDoctors" FunctionName="DoctorPortalDBModel.Store.PP_GetDoctors">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetDoctors_Result">
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Doctor_Name_Arabic" ColumnName="Doctor_Name_Arabic" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Specialization_Code" ColumnName="Specialization_Code" />
+          <ScalarProperty Name="Department_code" ColumnName="Department_code" />
+          <ScalarProperty Name="FirstSlotForFirstShift" ColumnName="FirstSlotForFirstShift" />
+          <ScalarProperty Name="LastSlotForFirstShift" ColumnName="LastSlotForFirstShift" />
+          <ScalarProperty Name="FirstSlotForSecondShift" ColumnName="FirstSlotForSecondShift" />
+          <ScalarProperty Name="LastSlotForSecondShift" ColumnName="LastSlotForSecondShift" />
+          <ScalarProperty Name="IsOPDAppointment" ColumnName="IsOPDAppointment" />
+          <ScalarProperty Name="Doctor_Title" ColumnName="Doctor_Title" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Education_Ar" ColumnName="Education_Ar" />
+          <ScalarProperty Name="Res_Phone" ColumnName="Res_Phone" />
+          <ScalarProperty Name="Mob_Phone" ColumnName="Mob_Phone" />
+          <ScalarProperty Name="Work_Phone" ColumnName="Work_Phone" />
+          <ScalarProperty Name="App_Phone" ColumnName="App_Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="ResearchPublications" ColumnName="ResearchPublications" />
+          <ScalarProperty Name="Memberships" ColumnName="Memberships" />
+          <ScalarProperty Name="LangEnglish" ColumnName="LangEnglish" />
+          <ScalarProperty Name="LangArabic" ColumnName="LangArabic" />
+          <ScalarProperty Name="LangHindi" ColumnName="LangHindi" />
+          <ScalarProperty Name="LangTagalog" ColumnName="LangTagalog" />
+          <ScalarProperty Name="LangFrench" ColumnName="LangFrench" />
+          <ScalarProperty Name="DocImage" ColumnName="DocImage" />
+          <ScalarProperty Name="IsAramcoAppointment" ColumnName="IsAramcoAppointment" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="IsHOD" ColumnName="IsHOD" />
+          <ScalarProperty Name="HODText" ColumnName="HODText" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDatetime" ColumnName="LastChangedDatetime" />
+          <ScalarProperty Name="Designation_Ar" ColumnName="Designation_Ar" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Description_Ar" ColumnName="Description_Ar" />
+          <ScalarProperty Name="DoctorPassword" ColumnName="DoctorPassword" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+          <ScalarProperty Name="LocationArName" ColumnName="LocationArName" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Arabic" ColumnName="Department_Name_Arabic" />
+          <ScalarProperty Name="Specialisation_Name1" ColumnName="Specialisation_Name1" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetFeedback" FunctionName="DoctorPortalDBModel.Store.PP_GetFeedback">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetFeedback_Result">
+          <ScalarProperty Name="FeedbackId" ColumnName="FeedbackId" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="FeedbackDescription" ColumnName="FeedbackDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="PatientRegId" ColumnName="PatientRegId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetLabReports" FunctionName="DoctorPortalDBModel.Store.PP_GetLabReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetLabReports_Result">
+          <ScalarProperty Name="LabReportId" ColumnName="LabReportId" />
+          <ScalarProperty Name="LabReportEnName" ColumnName="LabReportEnName" />
+          <ScalarProperty Name="LabReportArName" ColumnName="LabReportArName" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="ICDDescription" ColumnName="ICDDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetLocations" FunctionName="DoctorPortalDBModel.Store.PP_GetLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetLocations_Result">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+          <ScalarProperty Name="LocationArName" ColumnName="LocationArName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetMedicalReports" FunctionName="DoctorPortalDBModel.Store.PP_GetMedicalReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetMedicalReports_Result">
+          <ScalarProperty Name="MedicalReportId" ColumnName="MedicalReportId" />
+          <ScalarProperty Name="MedicalReportEnName" ColumnName="MedicalReportEnName" />
+          <ScalarProperty Name="MedicalReportArName" ColumnName="MedicalReportArName" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="ICDDescription" ColumnName="ICDDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetNews" FunctionName="DoctorPortalDBModel.Store.PP_GetNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetNews_Result">
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetPatientEduInfo" FunctionName="DoctorPortalDBModel.Store.PP_GetPatientEduInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetPatientEduInfo_Result">
+          <ScalarProperty Name="PatientEducationId" ColumnName="PatientEducationId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="FilenameArabic" ColumnName="FilenameArabic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetPatientRefillRequestInformation" FunctionName="DoctorPortalDBModel.Store.PP_GetPatientRefillRequestInformation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetPatientRefillRequestInformation_Result">
+          <ScalarProperty Name="PatientRequestId" ColumnName="PatientRequestId" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="SpecilizationId" ColumnName="SpecilizationId" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          <ScalarProperty Name="PlannedReleaseDate" ColumnName="PlannedReleaseDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="RequestStatus" ColumnName="RequestStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PatientRegId" ColumnName="PatientRegId" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="ReplyDatetime" ColumnName="ReplyDatetime" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+          <ScalarProperty Name="LocationArName" ColumnName="LocationArName" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Doctor_Name_Arabic" ColumnName="Doctor_Name_Arabic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetPatientRegistration" FunctionName="DoctorPortalDBModel.Store.PP_GetPatientRegistration">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetPatientRegistration_Result">
+          <ScalarProperty Name="PatientRegistrationRecId" ColumnName="PatientRegistrationRecId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaterityStatus" ColumnName="MaterityStatus" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="NationalIDorIqamaID" ColumnName="NationalIDorIqamaID" />
+          <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="RelationShip" ColumnName="RelationShip" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="NextOfKinName" ColumnName="NextOfKinName" />
+          <ScalarProperty Name="NextOfKinMobileNo" ColumnName="NextOfKinMobileNo" />
+          <ScalarProperty Name="VerificationStatus" ColumnName="VerificationStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsAramcoPatient" ColumnName="IsAramcoPatient" />
+          <ScalarProperty Name="IsSearchDone" ColumnName="IsSearchDone" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="IsAlreadyRegistered" ColumnName="IsAlreadyRegistered" />
+          <ScalarProperty Name="ShowMessage" ColumnName="ShowMessage" />
+          <ScalarProperty Name="NotificationMessage" ColumnName="NotificationMessage" />
+          <ScalarProperty Name="IsForIT" ColumnName="IsForIT" />
+          <ScalarProperty Name="BlockAppointments" ColumnName="BlockAppointments" />
+          <ScalarProperty Name="InsuranceType" ColumnName="InsuranceType" />
+          <ScalarProperty Name="AramcoID" ColumnName="AramcoID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetPatientReports" FunctionName="DoctorPortalDBModel.Store.PP_GetPatientReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetPatientReports_Result">
+          <ScalarProperty Name="PatientReportId" ColumnName="PatientReportId" />
+          <ScalarProperty Name="PatientReportEnName" ColumnName="PatientReportEnName" />
+          <ScalarProperty Name="PatientReportArName" ColumnName="PatientReportArName" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="ICDDescription" ColumnName="ICDDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetPatientsForAdmin" FunctionName="DoctorPortalDBModel.Store.PP_GetPatientsForAdmin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetPatientsForAdmin_Result">
+          <ScalarProperty Name="PatientRegistrationRecId" ColumnName="PatientRegistrationRecId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaterityStatus" ColumnName="MaterityStatus" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="NationalIDorIqamaID" ColumnName="NationalIDorIqamaID" />
+          <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="RelationShip" ColumnName="RelationShip" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="NextOfKinName" ColumnName="NextOfKinName" />
+          <ScalarProperty Name="NextOfKinMobileNo" ColumnName="NextOfKinMobileNo" />
+          <ScalarProperty Name="VerificationStatus" ColumnName="VerificationStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsAramcoPatient" ColumnName="IsAramcoPatient" />
+          <ScalarProperty Name="IsSearchDone" ColumnName="IsSearchDone" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="IsAlreadyRegistered" ColumnName="IsAlreadyRegistered" />
+          <ScalarProperty Name="ShowMessage" ColumnName="ShowMessage" />
+          <ScalarProperty Name="NotificationMessage" ColumnName="NotificationMessage" />
+          <ScalarProperty Name="IsForIT" ColumnName="IsForIT" />
+          <ScalarProperty Name="BlockAppointments" ColumnName="BlockAppointments" />
+          <ScalarProperty Name="InsuranceType" ColumnName="InsuranceType" />
+          <ScalarProperty Name="AramcoID" ColumnName="AramcoID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_GetSpecilizations" FunctionName="DoctorPortalDBModel.Store.PP_GetSpecilizations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_GetSpecilizations_Result">
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+          <ScalarProperty Name="Specialisation_Code" ColumnName="Specialisation_Code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_InsertDepartments" FunctionName="DoctorPortalDBModel.Store.PP_InsertDepartments" />
+    <FunctionImportMapping FunctionImportName="PP_InsertDoctors" FunctionName="DoctorPortalDBModel.Store.PP_InsertDoctors" />
+    <FunctionImportMapping FunctionImportName="PP_InsertLocations" FunctionName="DoctorPortalDBModel.Store.PP_InsertLocations" />
+    <FunctionImportMapping FunctionImportName="PP_UpdateDepartments" FunctionName="DoctorPortalDBModel.Store.PP_UpdateDepartments" />
+    <FunctionImportMapping FunctionImportName="PP_UpdateDoctors" FunctionName="DoctorPortalDBModel.Store.PP_UpdateDoctors" />
+    <FunctionImportMapping FunctionImportName="PP_UpdateLocations" FunctionName="DoctorPortalDBModel.Store.PP_UpdateLocations" />
+    <FunctionImportMapping FunctionImportName="PP_WebApiAllGetDepartments" FunctionName="DoctorPortalDBModel.Store.PP_WebApiAllGetDepartments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiAllGetDepartments_Result">
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Arabic" ColumnName="Department_Name_Arabic" />
+          <ScalarProperty Name="Department_Type_Code" ColumnName="Department_Type_Code" />
+          <ScalarProperty Name="Speciality_Code" ColumnName="Speciality_Code" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_Date" ColumnName="Last_Changed_Date" />
+          <ScalarProperty Name="IsMedical" ColumnName="IsMedical" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_WebApiAllGetSpecilizations" FunctionName="DoctorPortalDBModel.Store.PP_WebApiAllGetSpecilizations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiAllGetSpecilizations_Result">
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Specialisation_Location" ColumnName="Specialisation_Location" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ForPortal" ColumnName="ForPortal" />
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Specialisation_Code" ColumnName="Specialisation_Code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_WebApiGetDepartMents" FunctionName="DoctorPortalDBModel.Store.PP_WebApiGetDepartMents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiGetDepartMents_Result">
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Arabic" ColumnName="Department_Name_Arabic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_WebApiGetDoctors" FunctionName="DoctorPortalDBModel.Store.PP_WebApiGetDoctors">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiGetDoctors_Result">
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Doctor_Name_Arabic" ColumnName="Doctor_Name_Arabic" />
+          <ScalarProperty Name="DocImage" ColumnName="DocImage" />
+          <ScalarProperty Name="IsOPDAppointment" ColumnName="IsOPDAppointment" />
+          <ScalarProperty Name="FirstSlotForFirstShift" ColumnName="FirstSlotForFirstShift" />
+          <ScalarProperty Name="LastSlotForFirstShift" ColumnName="LastSlotForFirstShift" />
+          <ScalarProperty Name="FirstSlotForSecondShift" ColumnName="FirstSlotForSecondShift" />
+          <ScalarProperty Name="LastSlotForSecondShift" ColumnName="LastSlotForSecondShift" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+          <ScalarProperty Name="LocationArName" ColumnName="LocationArName" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="Department_Name_Arabic" ColumnName="Department_Name_Arabic" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Designation_Ar" ColumnName="Designation_Ar" />
+          <ScalarProperty Name="IsHOD" ColumnName="IsHOD" />
+          <ScalarProperty Name="HODText" ColumnName="HODText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Description_Ar" ColumnName="Description_Ar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_WebApiGetDoctorsAvalSlots" FunctionName="DoctorPortalDBModel.Store.PP_WebApiGetDoctorsAvalSlots">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiGetDoctorsAvalSlots_Result">
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Doctor_Name_Arabic" ColumnName="Doctor_Name_Arabic" />
+          <ScalarProperty Name="shift_one_from" ColumnName="shift_one_from" />
+          <ScalarProperty Name="shift_one_to" ColumnName="shift_one_to" />
+          <ScalarProperty Name="shift_second_from" ColumnName="shift_second_from" />
+          <ScalarProperty Name="shift_second_to" ColumnName="shift_second_to" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_WebApiGetDoctorsLeave" FunctionName="DoctorPortalDBModel.Store.PP_WebApiGetDoctorsLeave">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiGetDoctorsLeave_Result">
+          <ScalarProperty Name="Leave_ID" ColumnName="Leave_ID" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="Leave_Type" ColumnName="Leave_Type" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Encoded_By" ColumnName="Encoded_By" />
+          <ScalarProperty Name="Encoded_Date" ColumnName="Encoded_Date" />
+          <ScalarProperty Name="Last_Changed_By" ColumnName="Last_Changed_By" />
+          <ScalarProperty Name="Last_Changed_Date" ColumnName="Last_Changed_Date" />
+          <ScalarProperty Name="HIS_Leave_ID" ColumnName="HIS_Leave_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_WebApiGetLocations" FunctionName="DoctorPortalDBModel.Store.PP_WebApiGetLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiGetLocations_Result">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+          <ScalarProperty Name="LocationArName" ColumnName="LocationArName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PP_WebApiGetSpecilizations" FunctionName="DoctorPortalDBModel.Store.PP_WebApiGetSpecilizations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.PP_WebApiGetSpecilizations_Result">
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+          <ScalarProperty Name="Specialisation_Name_Arabic" ColumnName="Specialisation_Name_Arabic" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Specialisation_Location" ColumnName="Specialisation_Location" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ForPortal" ColumnName="ForPortal" />
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Specialisation_Code" ColumnName="Specialisation_Code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_APP_GetDoctorAppointment" FunctionName="DoctorPortalDBModel.Store.proc_APP_GetDoctorAppointment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.proc_APP_GetDoctorAppointment_Result">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Appointment_No" ColumnName="Appointment_No" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_App_Doctor_VisitType" FunctionName="DoctorPortalDBModel.Store.sproc_App_Doctor_VisitType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_App_Doctor_VisitType_Result">
+          <ScalarProperty Name="IsOPDAppointment" ColumnName="IsOPDAppointment" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="VisitType" ColumnName="VisitType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_App_Doctor_VisitType_Update" FunctionName="DoctorPortalDBModel.Store.sproc_App_Doctor_VisitType_Update" />
+    <FunctionImportMapping FunctionImportName="sproc_APP_GetPatient" FunctionName="DoctorPortalDBModel.Store.sproc_APP_GetPatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_APP_GetPatient_Result">
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_APP_GetPatientInfo" FunctionName="DoctorPortalDBModel.Store.sproc_APP_GetPatientInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_APP_GetPatientInfo_Result">
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PIS_MedicationREfill_Get" FunctionName="DoctorPortalDBModel.Store.sproc_PIS_MedicationREfill_Get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PIS_MedicationREfill_Get_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+          <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="PreferredDateToCollect" ColumnName="PreferredDateToCollect" />
+          <ScalarProperty Name="PreferredTimeToCollect" ColumnName="PreferredTimeToCollect" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+          <ScalarProperty Name="ReplyDateTime" ColumnName="ReplyDateTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_AddNotification" FunctionName="DoctorPortalDBModel.Store.sproc_PP_AddNotification" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_DepartmentMaster" FunctionName="DoctorPortalDBModel.Store.sproc_PP_DepartmentMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_DepartmentMaster_Result">
+          <ScalarProperty Name="Department_Code" ColumnName="Department_Code" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_DoctorMaster" FunctionName="DoctorPortalDBModel.Store.sproc_PP_DoctorMaster" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_DoctorMasterList" FunctionName="DoctorPortalDBModel.Store.sproc_PP_DoctorMasterList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_DoctorMasterList_Result">
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="Doctor_Name_Arabic" ColumnName="Doctor_Name_Arabic" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="Specialization_Code" ColumnName="Specialization_Code" />
+          <ScalarProperty Name="Department_code" ColumnName="Department_code" />
+          <ScalarProperty Name="FirstSlotForFirstShift" ColumnName="FirstSlotForFirstShift" />
+          <ScalarProperty Name="LastSlotForFirstShift" ColumnName="LastSlotForFirstShift" />
+          <ScalarProperty Name="FirstSlotForSecondShift" ColumnName="FirstSlotForSecondShift" />
+          <ScalarProperty Name="LastSlotForSecondShift" ColumnName="LastSlotForSecondShift" />
+          <ScalarProperty Name="IsOPDAppointment" ColumnName="IsOPDAppointment" />
+          <ScalarProperty Name="Doctor_Title" ColumnName="Doctor_Title" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Education_Ar" ColumnName="Education_Ar" />
+          <ScalarProperty Name="Res_Phone" ColumnName="Res_Phone" />
+          <ScalarProperty Name="Mob_Phone" ColumnName="Mob_Phone" />
+          <ScalarProperty Name="Work_Phone" ColumnName="Work_Phone" />
+          <ScalarProperty Name="App_Phone" ColumnName="App_Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="ResearchPublications" ColumnName="ResearchPublications" />
+          <ScalarProperty Name="Memberships" ColumnName="Memberships" />
+          <ScalarProperty Name="LangEnglish" ColumnName="LangEnglish" />
+          <ScalarProperty Name="LangArabic" ColumnName="LangArabic" />
+          <ScalarProperty Name="LangHindi" ColumnName="LangHindi" />
+          <ScalarProperty Name="LangTagalog" ColumnName="LangTagalog" />
+          <ScalarProperty Name="LangFrench" ColumnName="LangFrench" />
+          <ScalarProperty Name="DocImage" ColumnName="DocImage" />
+          <ScalarProperty Name="IsAramcoAppointment" ColumnName="IsAramcoAppointment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_GetFromIT" FunctionName="DoctorPortalDBModel.Store.sproc_PP_GetFromIT" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_LocationMaster" FunctionName="DoctorPortalDBModel.Store.sproc_PP_LocationMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_LocationMaster_Result">
+          <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+          <ScalarProperty Name="LocationEnName" ColumnName="LocationEnName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBack" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBack" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBack_IT" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBack_IT" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBack_Pharmacy" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBack_Pharmacy" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBack_ResetPassword" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBack_ResetPassword" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBack_Sickleave" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBack_Sickleave" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGet" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGet" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGet_IT" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGet_IT" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGet_Pharmacy" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGet_Pharmacy" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGet_SickLeave" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGet_SickLeave" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGetConversation" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGetConversation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_Result">
+          <ScalarProperty Name="FormattedDated" ColumnName="FormattedDated" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="FeedbackDescription" ColumnName="FeedbackDescription" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Conversations" ColumnName="Conversations" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGetConversation_IT" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGetConversation_IT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_IT_Result">
+          <ScalarProperty Name="FormattedDated" ColumnName="FormattedDated" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="FeedbackDescription" ColumnName="FeedbackDescription" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Conversations" ColumnName="Conversations" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGetConversation_Pharmacy" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGetConversation_Pharmacy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_Pharmacy_Result">
+          <ScalarProperty Name="FormattedDated" ColumnName="FormattedDated" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Conversations" ColumnName="Conversations" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_PatientFeedBackGetConversation_SickLeave" FunctionName="DoctorPortalDBModel.Store.sproc_PP_PatientFeedBackGetConversation_SickLeave">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_SickLeave_Result">
+          <ScalarProperty Name="FormattedDated" ColumnName="FormattedDated" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="PreferedDatetime" ColumnName="PreferedDatetime" />
+          <ScalarProperty Name="Conversations" ColumnName="Conversations" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_ResetPassword_GetInformation" FunctionName="DoctorPortalDBModel.Store.sproc_PP_ResetPassword_GetInformation" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_ResetPassword_UpdateInfo" FunctionName="DoctorPortalDBModel.Store.sproc_PP_ResetPassword_UpdateInfo" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_SendForIT" FunctionName="DoctorPortalDBModel.Store.sproc_PP_SendForIT" />
+    <FunctionImportMapping FunctionImportName="sproc_PP_SpecialisationMaster" FunctionName="DoctorPortalDBModel.Store.sproc_PP_SpecialisationMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PP_SpecialisationMaster_Result">
+          <ScalarProperty Name="Specialisation_Code" ColumnName="Specialisation_Code" />
+          <ScalarProperty Name="Specialisation_Name" ColumnName="Specialisation_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PP_UpdateSearchDone" FunctionName="DoctorPortalDBModel.Store.sproc_PP_UpdateSearchDone" />
+    <FunctionImportMapping FunctionImportName="sproc_PRG_GetWebPatientRegistration" FunctionName="DoctorPortalDBModel.Store.sproc_PRG_GetWebPatientRegistration">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DoctorPortalDBModel.sproc_PRG_GetWebPatientRegistration_Result">
+          <ScalarProperty Name="locationCode" ColumnName="locationCode" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="PatientRegistrationRecId" ColumnName="PatientRegistrationRecId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaterityStatus" ColumnName="MaterityStatus" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="NationalIDorIqamaID" ColumnName="NationalIDorIqamaID" />
+          <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="RelationShip" ColumnName="RelationShip" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="NextOfKinName" ColumnName="NextOfKinName" />
+          <ScalarProperty Name="NextOfKinMobileNo" ColumnName="NextOfKinMobileNo" />
+          <ScalarProperty Name="VerificationStatus" ColumnName="VerificationStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastChangedBy" ColumnName="LastChangedBy" />
+          <ScalarProperty Name="LastChangedDate" ColumnName="LastChangedDate" />
+          <ScalarProperty Name="MRNo" ColumnName="MRNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsSearchDone" ColumnName="IsSearchDone" />
+          <ScalarProperty Name="IsForIT" ColumnName="IsForIT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sproc_PRG_VerifyRegistration" FunctionName="DoctorPortalDBModel.Store.sproc_PRG_VerifyRegistration" />
+  </EntityContainerMapping>
+</Mapping>

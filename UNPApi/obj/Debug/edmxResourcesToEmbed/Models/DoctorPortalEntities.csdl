@@ -1,0 +1,1989 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DoctorPortalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="split_Result">
+    <Property Name="entry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="Splitstring_Result">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="PP_PatientRegistration" Relationship="Self.FK_PatientRegistration_AspNetUsers" FromRole="AspNetUsers" ToRole="PP_PatientRegistration" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="PP_AddDependent">
+    <Key>
+      <PropertyRef Name="AddDependentID" />
+    </Key>
+    <Property Name="AddDependentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MobileNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RegistrationNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="RelationWithMe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RelationwithmeArabic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GrandFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_AppLanguage">
+    <Key>
+      <PropertyRef Name="AppLanguageId" />
+    </Key>
+    <Property Name="AppLanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Culture" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="Visible" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PP_AppSettingTranslation" Relationship="Self.FK_dbo_AppSettingTranslation_dbo_AppLanguage_AppLanguageId" FromRole="PP_AppLanguage" ToRole="PP_AppSettingTranslation" />
+  </EntityType>
+  <EntityType Name="PP_Appointment">
+    <Key>
+      <PropertyRef Name="Appointment_ID" />
+    </Key>
+    <Property Name="Appointment_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_ID" Type="Int64" />
+    <Property Name="Location_ID" Type="Int64" />
+    <Property Name="Location_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentType_ID" Type="Int32" />
+    <Property Name="Specialization_ID" Type="Int32" Nullable="false" />
+    <Property Name="Specialization_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Doctor_ID" Type="Int64" Nullable="false" />
+    <Property Name="DoctorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorName_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Shift_Type" Type="Int32" Nullable="false" />
+    <Property Name="Time_Slot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Visited" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Reason" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="StatusChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="StatusChangedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Specialization_Name_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Department_ID" Type="Int32" />
+    <Property Name="Department_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Department_Name_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PP_AppointmentType" Relationship="Self.FK_dbo_Appointment_dbo_AppointmentType_AppointmentType_ID" FromRole="PP_Appointment" ToRole="PP_AppointmentType" />
+    <NavigationProperty Name="PP_Patient" Relationship="Self.FK_dbo_Appointment_dbo_Patient_Patient_ID" FromRole="PP_Appointment" ToRole="PP_Patient" />
+  </EntityType>
+  <EntityType Name="PP_AppointmentType">
+    <Key>
+      <PropertyRef Name="AppointmentType_ID" />
+    </Key>
+    <Property Name="AppointmentType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title_ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TypeCode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PP_Appointment" Relationship="Self.FK_dbo_Appointment_dbo_AppointmentType_AppointmentType_ID" FromRole="PP_AppointmentType" ToRole="PP_Appointment" />
+  </EntityType>
+  <EntityType Name="PP_AppSetting">
+    <Key>
+      <PropertyRef Name="AppSettingId" />
+    </Key>
+    <Property Name="AppSettingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Setting_Key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DataType" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Multilingual" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PP_AppSettingTranslation" Relationship="Self.FK_dbo_AppSettingTranslation_dbo_AppSetting_AppSettingId" FromRole="PP_AppSetting" ToRole="PP_AppSettingTranslation" />
+  </EntityType>
+  <EntityType Name="PP_AppSettingTranslation">
+    <Key>
+      <PropertyRef Name="AppSettingTranslationId" />
+    </Key>
+    <Property Name="AppSettingTranslationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Culture" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AppSettingId" Type="Int32" />
+    <Property Name="Setting_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AppLanguageId" Type="Int32" />
+    <Property Name="IsBaseLang" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PP_AppLanguage" Relationship="Self.FK_dbo_AppSettingTranslation_dbo_AppLanguage_AppLanguageId" FromRole="PP_AppSettingTranslation" ToRole="PP_AppLanguage" />
+    <NavigationProperty Name="PP_AppSetting" Relationship="Self.FK_dbo_AppSettingTranslation_dbo_AppSetting_AppSettingId" FromRole="PP_AppSettingTranslation" ToRole="PP_AppSetting" />
+  </EntityType>
+  <EntityType Name="PP_AppversionCheck">
+    <Key>
+      <PropertyRef Name="versionID" />
+    </Key>
+    <Property Name="versionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AndroidversionNo" Type="Int32" />
+    <Property Name="iosversionNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="CreatedDatetime" Type="DateTime" Precision="3" />
+    <Property Name="androidamendDate" Type="DateTime" Precision="3" />
+    <Property Name="iosAmendDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PP_Department_Main">
+    <Key>
+      <PropertyRef Name="Department_Code" />
+    </Key>
+    <Property Name="Department_Code" Type="Int32" Nullable="false" />
+    <Property Name="Department_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Department_Name_Arabic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Department_Type_Code" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Speciality_Code" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Encoded_By" Type="Int32" />
+    <Property Name="Encoded_Date" Type="DateTime" Precision="3" />
+    <Property Name="Last_Changed_By" Type="Int32" />
+    <Property Name="Last_Changed_Date" Type="DateTime" Precision="3" />
+    <Property Name="IsMedical" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_Doctor_Appointment">
+    <Key>
+      <PropertyRef Name="Appointment_Code" />
+    </Key>
+    <Property Name="Appointment_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Appointment_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Appointment_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Doctor_Code" Type="Int32" Nullable="false" />
+    <Property Name="Location_Code" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Encounter_No" Type="Int32" />
+    <Property Name="Registration_No" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="From_Time" Type="DateTime" Precision="3" />
+    <Property Name="To_Time" Type="DateTime" Precision="3" />
+    <Property Name="Shift_type" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Appointment_Source" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserGUID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LastModifiedById" Type="Int32" />
+    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CancelDate" Type="DateTime" Precision="3" />
+    <Property Name="EncodedDate" Type="DateTime" Precision="3" />
+    <Property Name="Appointment_No" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PP_Doctor_Capacity">
+    <Key>
+      <PropertyRef Name="Rec_ID" />
+    </Key>
+    <Property Name="Rec_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Doctor_Code" Type="Int32" Nullable="false" />
+    <Property Name="Date_Capacity" Type="DateTime" Precision="3" />
+    <Property Name="Shift_Capacity" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Booked_Capacity" Type="Int32" />
+    <Property Name="New_Capacity" Type="Int32" />
+    <Property Name="WalkIn_Capacity" Type="Int32" />
+    <Property Name="Encoded_By" Type="Int32" />
+    <Property Name="Encoded_Date" Type="DateTime" Precision="3" />
+    <Property Name="Last_Changed_By" Type="Int32" />
+    <Property Name="Last_Changed_Date" Type="DateTime" Precision="3" />
+    <Property Name="Aramco_Capacity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PP_Doctor_Leave">
+    <Key>
+      <PropertyRef Name="Leave_ID" />
+    </Key>
+    <Property Name="Leave_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Doctor_Code" Type="Int32" Nullable="false" />
+    <Property Name="From_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="To_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Leave_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Encoded_By" Type="Int32" />
+    <Property Name="Encoded_Date" Type="DateTime" Precision="3" />
+    <Property Name="Last_Changed_By" Type="Int32" />
+    <Property Name="Last_Changed_Date" Type="DateTime" Precision="3" />
+    <Property Name="HIS_Leave_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PP_Doctor_Periodic_Timechange">
+    <Key>
+      <PropertyRef Name="Doctor_Code" />
+      <PropertyRef Name="From_period" />
+      <PropertyRef Name="To_period" />
+    </Key>
+    <Property Name="Doctor_Code" Type="Int32" Nullable="false" />
+    <Property Name="From_period" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="To_period" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Shift_one_from" Type="DateTime" Precision="3" />
+    <Property Name="Shift_one_to" Type="DateTime" Precision="3" />
+    <Property Name="Shift_second_from" Type="DateTime" Precision="3" />
+    <Property Name="Shift_second_to" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Encoded_By" Type="Int32" />
+    <Property Name="Encoded_Date" Type="DateTime" Precision="0" />
+    <Property Name="Last_Changed_By" Type="Int32" />
+    <Property Name="Last_Changed_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PP_Doctor_Time">
+    <Key>
+      <PropertyRef Name="doctor_code" />
+      <PropertyRef Name="day" />
+    </Key>
+    <Property Name="doctor_code" Type="Int32" Nullable="false" />
+    <Property Name="day" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="shift_one_from" Type="DateTime" Precision="3" />
+    <Property Name="shift_one_to" Type="DateTime" Precision="3" />
+    <Property Name="shift_second_from" Type="DateTime" Precision="3" />
+    <Property Name="shift_second_to" Type="DateTime" Precision="3" />
+    <Property Name="Encoded_By" Type="Int32" />
+    <Property Name="Encoded_Date" Type="DateTime" Precision="3" />
+    <Property Name="Last_Changed_By" Type="Int32" />
+    <Property Name="Last_Changed_date" Type="DateTime" Precision="3" />
+    <Property Name="FirstSlotForFirstShift" Type="Int32" />
+    <Property Name="LastSlotForFirstShift" Type="Int32" />
+    <Property Name="FirstSlotForSecondShift" Type="Int32" />
+    <Property Name="LastSlotForSecondShift" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PP_FacilityMaster">
+    <Key>
+      <PropertyRef Name="FacilityID" />
+    </Key>
+    <Property Name="FacilityID" Type="Int16" Nullable="false" />
+    <Property Name="HospitalLocationID" Type="Byte" Nullable="false" />
+    <Property Name="AR_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TimeZoneId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TimeZoneOffSetMinutes" Type="Int32" Nullable="false" />
+    <Property Name="LinkServerName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LinkServerLISDBName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LinkServerHISDBName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="EncodedBy" Type="Int32" />
+    <Property Name="EncodedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="0" />
+    <Property Name="DirectAppointment" Type="Boolean" />
+    <Property Name="LinkHistServerName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LinkHistServerLISDBName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BranchLocationCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PP_Feedback">
+    <Key>
+      <PropertyRef Name="FeedbackId" />
+    </Key>
+    <Property Name="FeedbackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MRNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FeedbackDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="ReplyMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PatientRegId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_FeedbackIT">
+    <Key>
+      <PropertyRef Name="FeedbackId" />
+    </Key>
+    <Property Name="FeedbackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FeedbackDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="ReplyMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FeedbackTypeId" Type="Int32" />
+    <Property Name="PatientRegId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_FeedbackTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionAr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="AmendDatetime" Type="DateTime" Precision="3" />
+    <Property Name="AmendBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PP_GlobalMessgeFlag">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShowMessge" Type="Boolean" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_LabReports">
+    <Key>
+      <PropertyRef Name="LabReportId" />
+    </Key>
+    <Property Name="LabReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LabReportEnName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LabReportArName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorCode" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="LocationCode" Type="Int32" />
+    <Property Name="ICDCode" Type="Int32" />
+    <Property Name="ICDDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location_Code" Type="Int32" />
+    <Property Name="LocationEnName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LocationArName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_LocationWiseDepartments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_Marital">
+    <Key>
+      <PropertyRef Name="MaritalID" />
+    </Key>
+    <Property Name="MaritalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaritalEnStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaritalArStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_MedicalReport_Requests">
+    <Key>
+      <PropertyRef Name="MedicalReportRecId" />
+    </Key>
+    <Property Name="MedicalReportRecId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MedicalReportUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Attachment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PreferedDatetime" Type="DateTime" Precision="3" />
+    <Property Name="LocationCode" Type="Int32" Nullable="false" />
+    <Property Name="SpecializationCode" Type="Int32" Nullable="false" />
+    <Property Name="DoctorCode" Type="Int32" Nullable="false" />
+    <Property Name="ReplyMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReplyDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertBy" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PP_MedicalReports">
+    <Key>
+      <PropertyRef Name="MedicalReportId" />
+    </Key>
+    <Property Name="MedicalReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MedicalReportEnName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MedicalReportArName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorCode" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="LocationCode" Type="Int32" />
+    <Property Name="ICDCode" Type="Int32" />
+    <Property Name="ICDDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_Nationality">
+    <Key>
+      <PropertyRef Name="NationalityRecId" />
+    </Key>
+    <Property Name="NationalityRecId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NationalityEnName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NationalityArName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_News">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="Visible" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_Notifications">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientRegId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NotificationMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="ReadDatetime" Type="DateTime" Precision="3" />
+    <Property Name="IsRead" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_Offers">
+    <Key>
+      <PropertyRef Name="OfferRecId" />
+    </Key>
+    <Property Name="OfferRecId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OfferDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="OfferDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="StartDatetime" Type="DateTime" Precision="3" />
+    <Property Name="EndDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PP_Packages">
+    <Key>
+      <PropertyRef Name="PackageRecId" />
+    </Key>
+    <Property Name="PackageRecId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackageDescription" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+    <Property Name="PackageDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="InsertDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PP_Patient">
+    <Key>
+      <PropertyRef Name="Patient_ID" />
+    </Key>
+    <Property Name="Patient_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Registration_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gardian_ID" Type="Int64" />
+    <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="National_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Marital_Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality_ID" Type="Int32" />
+    <Property Name="Relation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HospitalLocationID" Type="Int32" />
+    <Property Name="Verified" Type="Boolean" Nullable="false" />
+    <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PP_Appointment" Relationship="Self.FK_dbo_Appointment_dbo_Patient_Patient_ID" FromRole="PP_Patient" ToRole="PP_Appointment" />
+    <NavigationProperty Name="PP_Patient1" Relationship="Self.FK_dbo_Patient_dbo_Patient_Gardian_ID" FromRole="PP_Patient" ToRole="PP_Patient1" />
+    <NavigationProperty Name="PP_Patient2" Relationship="Self.FK_dbo_Patient_dbo_Patient_Gardian_ID" FromRole="PP_Patient1" ToRole="PP_Patient" />
+  </EntityType>
+  <EntityType Name="PP_PatientEducation">
+    <Key>
+      <PropertyRef Name="PatientEducationId" />
+    </Key>
+    <Property Name="PatientEducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="FilenameArabic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_PatientRegistration">
+    <Key>
+      <PropertyRef Name="PatientRegistrationRecId" />
+    </Key>
+    <Property Name="PatientRegistrationRecId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GrandFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaterityStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BloodGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NationalIDorIqamaID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PassportNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RelationShip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NextOfKinName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NextOfKinMobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="MRNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsAramcoPatient" Type="Boolean" />
+    <Property Name="IsSearchDone" Type="Boolean" />
+    <Property Name="LocationCode" Type="Int32" />
+    <Property Name="IsAlreadyRegistered" Type="Boolean" />
+    <Property Name="ShowMessage" Type="Boolean" />
+    <Property Name="NotificationMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsForIT" Type="Boolean" />
+    <Property Name="BlockAppointments" Type="Boolean" />
+    <Property Name="InsuranceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AramcoID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_PatientRegistration_AspNetUsers" FromRole="PP_PatientRegistration" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="PP_PatientReports">
+    <Key>
+      <PropertyRef Name="PatientReportId" />
+    </Key>
+    <Property Name="PatientReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientReportEnName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PatientReportArName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorCode" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="LocationCode" Type="Int32" />
+    <Property Name="ICDCode" Type="Int32" />
+    <Property Name="ICDDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_PatientRequest">
+    <Key>
+      <PropertyRef Name="PatientRequestId" />
+    </Key>
+    <Property Name="PatientRequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MRNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="SpecilizationId" Type="Int32" />
+    <Property Name="DoctorCode" Type="Int32" />
+    <Property Name="RequestType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PlannedReleaseDate" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequestStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="PatientRegId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ReplyMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReplyDatetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PP_Registration">
+    <Key>
+      <PropertyRef Name="Rec_ID" />
+    </Key>
+    <Property Name="Rec_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Father_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GrandFather_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Family_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date_Of_Birth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Marital_Status_Id" Type="Int32" />
+    <Property Name="Nationality_Id" Type="Int32" />
+    <Property Name="National_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile_No" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="First_Name_Arabic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Father_Name_Arabic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GrandFather_Name_Arabic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Family_Name_Arabic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MovedToHIS" Type="Boolean" Nullable="false" />
+    <Property Name="Encoded_Date" Type="DateTime" Precision="3" />
+    <Property Name="UserGUID" Type="Int32" />
+    <Property Name="Nationality" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_Religion">
+    <Key>
+      <PropertyRef Name="ReligionRecId" />
+    </Key>
+    <Property Name="ReligionRecId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReligionEnName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReligionArName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PP_SickLeaves">
+    <Key>
+      <PropertyRef Name="SickleaveRecId" />
+    </Key>
+    <Property Name="SickleaveRecId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SickleaveUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Attachment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PreferedDatetime" Type="DateTime" Precision="3" />
+    <Property Name="LocationCode" Type="Int32" />
+    <Property Name="SpecializationCode" Type="Int32" />
+    <Property Name="DoctorCode" Type="Int32" />
+    <Property Name="ReplyMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReplyDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertBy" Type="Int32" />
+    <Property Name="LeaveStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PP_Wala">
+    <Key>
+      <PropertyRef Name="walaId" />
+    </Key>
+    <Property Name="walaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientRegId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="MRNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InsertDatetime" Type="DateTime" Precision="3" />
+    <Property Name="InsertBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="testuser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mr_no" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dob" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="iqama" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hospital_id" Type="Int32" Nullable="false" />
+    <Property Name="pr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sms_validation_code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="logins" Type="Int32" Nullable="false" />
+    <Property Name="usertype" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_login" Type="Int32" Nullable="false" />
+    <Property Name="vcstatus" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devicetype" Type="Int32" Nullable="false" />
+    <Property Name="deviceid" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="device_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alertstatus" Type="Int32" Nullable="false" />
+    <Property Name="rdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="language_type" Type="Int32" Nullable="false" />
+    <Property Name="updated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="testusers2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mr_no" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dob" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="iqama" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hospital_id" Type="Int32" Nullable="false" />
+    <Property Name="pr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sms_validation_code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="logins" Type="Int32" Nullable="false" />
+    <Property Name="usertype" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_login" Type="Int32" Nullable="false" />
+    <Property Name="vcstatus" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devicetype" Type="Int32" Nullable="false" />
+    <Property Name="deviceid" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="device_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alertstatus" Type="Int32" Nullable="false" />
+    <Property Name="rdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="language_type" Type="Int32" Nullable="false" />
+    <Property Name="updated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="PP_Doctor_Master">
+    <Key>
+      <PropertyRef Name="Rec_Id" />
+      <PropertyRef Name="Doctor_Code" />
+      <PropertyRef Name="Doctor_Name" />
+      <PropertyRef Name="Location_Code" />
+    </Key>
+    <Property Name="Rec_Id" Type="Int32" Nullable="false" />
+    <Property Name="Doctor_Code" Type="Int32" Nullable="false" />
+    <Property Name="Doctor_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Doctor_Name_Arabic" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Specialisation_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Location_Code" Type="Int32" Nullable="false" />
+    <Property Name="Specialization_Code" Type="Int32" />
+    <Property Name="Department_code" Type="Int32" />
+    <Property Name="FirstSlotForFirstShift" Type="Int32" />
+    <Property Name="LastSlotForFirstShift" Type="Int32" />
+    <Property Name="FirstSlotForSecondShift" Type="Int32" />
+    <Property Name="LastSlotForSecondShift" Type="Int32" />
+    <Property Name="IsOPDAppointment" Type="Boolean" />
+    <Property Name="Doctor_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Education" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Education_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Res_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mob_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Work_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="App_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Languages" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ResearchPublications" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Memberships" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LangEnglish" Type="Boolean" />
+    <Property Name="LangArabic" Type="Boolean" />
+    <Property Name="LangHindi" Type="Boolean" />
+    <Property Name="LangTagalog" Type="Boolean" />
+    <Property Name="LangFrench" Type="Boolean" />
+    <Property Name="DocImage" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsAramcoAppointment" Type="Boolean" />
+    <Property Name="Qualification" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsHOD" Type="Boolean" />
+    <Property Name="HODText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LastChangedBy" Type="Int32" />
+    <Property Name="LastChangedDatetime" Type="DateTime" Precision="3" />
+    <Property Name="Designation_Ar" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PP_PharmacyRefillsRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="FacilityId" />
+      <PropertyRef Name="RegistrationId" />
+      <PropertyRef Name="PatientName" />
+      <PropertyRef Name="DoctorName" />
+      <PropertyRef Name="PreferredDateToCollect" />
+      <PropertyRef Name="PreferredTimeToCollect" />
+      <PropertyRef Name="EncodedDate" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacilityId" Type="Int16" Nullable="false" />
+    <Property Name="RegistrationId" Type="Int32" Nullable="false" />
+    <Property Name="PatientName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DoctorName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PreferredDateToCollect" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PreferredTimeToCollect" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Reply" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ReplyDateTime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EncodedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LastChangedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="PP_Specialisations">
+    <Key>
+      <PropertyRef Name="Rec_Id" />
+      <PropertyRef Name="Specialisation_Name" />
+      <PropertyRef Name="Location_Code" />
+      <PropertyRef Name="Specialisation_Location" />
+    </Key>
+    <Property Name="Rec_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Specialisation_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Specialisation_Name_Arabic" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Location_Code" Type="Int32" Nullable="false" />
+    <Property Name="Specialisation_Location" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ForPortal" Type="Boolean" />
+    <Property Name="Department_Code" Type="Int32" />
+    <Property Name="Specialisation_Code" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientRegistration_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="PP_PatientRegistration" Type="Self.PP_PatientRegistration" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PP_PatientRegistration">
+        <PropertyRef Name="PatientRegistrationRecId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AppSettingTranslation_dbo_AppLanguage_AppLanguageId">
+    <End Role="PP_AppLanguage" Type="Self.PP_AppLanguage" Multiplicity="0..1" />
+    <End Role="PP_AppSettingTranslation" Type="Self.PP_AppSettingTranslation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PP_AppLanguage">
+        <PropertyRef Name="AppLanguageId" />
+      </Principal>
+      <Dependent Role="PP_AppSettingTranslation">
+        <PropertyRef Name="AppLanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Appointment_dbo_AppointmentType_AppointmentType_ID">
+    <End Role="PP_AppointmentType" Type="Self.PP_AppointmentType" Multiplicity="0..1" />
+    <End Role="PP_Appointment" Type="Self.PP_Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PP_AppointmentType">
+        <PropertyRef Name="AppointmentType_ID" />
+      </Principal>
+      <Dependent Role="PP_Appointment">
+        <PropertyRef Name="AppointmentType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Appointment_dbo_Patient_Patient_ID">
+    <End Role="PP_Patient" Type="Self.PP_Patient" Multiplicity="0..1" />
+    <End Role="PP_Appointment" Type="Self.PP_Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PP_Patient">
+        <PropertyRef Name="Patient_ID" />
+      </Principal>
+      <Dependent Role="PP_Appointment">
+        <PropertyRef Name="Patient_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AppSettingTranslation_dbo_AppSetting_AppSettingId">
+    <End Role="PP_AppSetting" Type="Self.PP_AppSetting" Multiplicity="0..1" />
+    <End Role="PP_AppSettingTranslation" Type="Self.PP_AppSettingTranslation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PP_AppSetting">
+        <PropertyRef Name="AppSettingId" />
+      </Principal>
+      <Dependent Role="PP_AppSettingTranslation">
+        <PropertyRef Name="AppSettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Patient_dbo_Patient_Gardian_ID">
+    <End Role="PP_Patient" Type="Self.PP_Patient" Multiplicity="0..1" />
+    <End Role="PP_Patient1" Type="Self.PP_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PP_Patient">
+        <PropertyRef Name="Patient_ID" />
+      </Principal>
+      <Dependent Role="PP_Patient1">
+        <PropertyRef Name="Gardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DoctorPortalDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="PP_AddDependent" EntityType="Self.PP_AddDependent" />
+    <EntitySet Name="PP_AppLanguage" EntityType="Self.PP_AppLanguage" />
+    <EntitySet Name="PP_Appointment" EntityType="Self.PP_Appointment" />
+    <EntitySet Name="PP_AppointmentType" EntityType="Self.PP_AppointmentType" />
+    <EntitySet Name="PP_AppSetting" EntityType="Self.PP_AppSetting" />
+    <EntitySet Name="PP_AppSettingTranslation" EntityType="Self.PP_AppSettingTranslation" />
+    <EntitySet Name="PP_AppversionCheck" EntityType="Self.PP_AppversionCheck" />
+    <EntitySet Name="PP_Department_Main" EntityType="Self.PP_Department_Main" />
+    <EntitySet Name="PP_Doctor_Appointment" EntityType="Self.PP_Doctor_Appointment" />
+    <EntitySet Name="PP_Doctor_Capacity" EntityType="Self.PP_Doctor_Capacity" />
+    <EntitySet Name="PP_Doctor_Leave" EntityType="Self.PP_Doctor_Leave" />
+    <EntitySet Name="PP_Doctor_Periodic_Timechange" EntityType="Self.PP_Doctor_Periodic_Timechange" />
+    <EntitySet Name="PP_Doctor_Time" EntityType="Self.PP_Doctor_Time" />
+    <EntitySet Name="PP_FacilityMaster" EntityType="Self.PP_FacilityMaster" />
+    <EntitySet Name="PP_Feedback" EntityType="Self.PP_Feedback" />
+    <EntitySet Name="PP_FeedbackIT" EntityType="Self.PP_FeedbackIT" />
+    <EntitySet Name="PP_FeedbackTypes" EntityType="Self.PP_FeedbackTypes" />
+    <EntitySet Name="PP_GlobalMessgeFlag" EntityType="Self.PP_GlobalMessgeFlag" />
+    <EntitySet Name="PP_LabReports" EntityType="Self.PP_LabReports" />
+    <EntitySet Name="PP_Location" EntityType="Self.PP_Location" />
+    <EntitySet Name="PP_LocationWiseDepartments" EntityType="Self.PP_LocationWiseDepartments" />
+    <EntitySet Name="PP_Marital" EntityType="Self.PP_Marital" />
+    <EntitySet Name="PP_MedicalReport_Requests" EntityType="Self.PP_MedicalReport_Requests" />
+    <EntitySet Name="PP_MedicalReports" EntityType="Self.PP_MedicalReports" />
+    <EntitySet Name="PP_Nationality" EntityType="Self.PP_Nationality" />
+    <EntitySet Name="PP_News" EntityType="Self.PP_News" />
+    <EntitySet Name="PP_Notifications" EntityType="Self.PP_Notifications" />
+    <EntitySet Name="PP_Offers" EntityType="Self.PP_Offers" />
+    <EntitySet Name="PP_Packages" EntityType="Self.PP_Packages" />
+    <EntitySet Name="PP_Patient" EntityType="Self.PP_Patient" />
+    <EntitySet Name="PP_PatientEducation" EntityType="Self.PP_PatientEducation" />
+    <EntitySet Name="PP_PatientRegistration" EntityType="Self.PP_PatientRegistration" />
+    <EntitySet Name="PP_PatientReports" EntityType="Self.PP_PatientReports" />
+    <EntitySet Name="PP_PatientRequest" EntityType="Self.PP_PatientRequest" />
+    <EntitySet Name="PP_Registration" EntityType="Self.PP_Registration" />
+    <EntitySet Name="PP_Religion" EntityType="Self.PP_Religion" />
+    <EntitySet Name="PP_SickLeaves" EntityType="Self.PP_SickLeaves" />
+    <EntitySet Name="PP_Wala" EntityType="Self.PP_Wala" />
+    <EntitySet Name="testusers" EntityType="Self.testuser" />
+    <EntitySet Name="testusers2" EntityType="Self.testusers2" />
+    <EntitySet Name="PP_Doctor_Master" EntityType="Self.PP_Doctor_Master" />
+    <EntitySet Name="PP_PharmacyRefillsRequest" EntityType="Self.PP_PharmacyRefillsRequest" />
+    <EntitySet Name="PP_Specialisations" EntityType="Self.PP_Specialisations" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientRegistration_AspNetUsers" Association="Self.FK_PatientRegistration_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="PP_PatientRegistration" EntitySet="PP_PatientRegistration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AppSettingTranslation_dbo_AppLanguage_AppLanguageId" Association="Self.FK_dbo_AppSettingTranslation_dbo_AppLanguage_AppLanguageId">
+      <End Role="PP_AppLanguage" EntitySet="PP_AppLanguage" />
+      <End Role="PP_AppSettingTranslation" EntitySet="PP_AppSettingTranslation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Appointment_dbo_AppointmentType_AppointmentType_ID" Association="Self.FK_dbo_Appointment_dbo_AppointmentType_AppointmentType_ID">
+      <End Role="PP_AppointmentType" EntitySet="PP_AppointmentType" />
+      <End Role="PP_Appointment" EntitySet="PP_Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Appointment_dbo_Patient_Patient_ID" Association="Self.FK_dbo_Appointment_dbo_Patient_Patient_ID">
+      <End Role="PP_Patient" EntitySet="PP_Patient" />
+      <End Role="PP_Appointment" EntitySet="PP_Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AppSettingTranslation_dbo_AppSetting_AppSettingId" Association="Self.FK_dbo_AppSettingTranslation_dbo_AppSetting_AppSettingId">
+      <End Role="PP_AppSetting" EntitySet="PP_AppSetting" />
+      <End Role="PP_AppSettingTranslation" EntitySet="PP_AppSettingTranslation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Patient_dbo_Patient_Gardian_ID" Association="Self.FK_dbo_Patient_dbo_Patient_Gardian_ID">
+      <End Role="PP_Patient" EntitySet="PP_Patient" />
+      <End Role="PP_Patient1" EntitySet="PP_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="split" IsComposable="true" ReturnType="Collection(DoctorPortalDBModel.split_Result)">
+      <Parameter Name="csv" Mode="In" Type="String" />
+      <Parameter Name="delim" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Splitstring" IsComposable="true" ReturnType="Collection(DoctorPortalDBModel.Splitstring_Result)">
+      <Parameter Name="List" Mode="In" Type="String" />
+      <Parameter Name="SplitOn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_AddDependents" ReturnType="Collection(DoctorPortalDBModel.PP_AddDependents_Result)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_AppointmentAvailTimes">
+      <Parameter Name="DoctorCode" Mode="In" Type="Int32" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="ShiftType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_AvailableSlots">
+      <Parameter Name="Doctor_Code" Mode="In" Type="Int32" />
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_DeleteDepartments">
+      <Parameter Name="Department_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_DeleteDoctors">
+      <Parameter Name="Rec_Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_DeleteLocations">
+      <Parameter Name="LocationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_Doctor_Appointments" ReturnType="Collection(DoctorPortalDBModel.PP_Doctor_Appointments_Result)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_Doctor_Appointments_Canceled">
+      <Parameter Name="Appointment_No" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_GetDepartments" ReturnType="Collection(DoctorPortalDBModel.PP_GetDepartments_Result)" />
+    <FunctionImport Name="PP_GetDoctors" ReturnType="Collection(DoctorPortalDBModel.PP_GetDoctors_Result)" />
+    <FunctionImport Name="PP_GetFeedback" ReturnType="Collection(DoctorPortalDBModel.PP_GetFeedback_Result)" />
+    <FunctionImport Name="PP_GetLabReports" ReturnType="Collection(DoctorPortalDBModel.PP_GetLabReports_Result)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_GetLocations" ReturnType="Collection(DoctorPortalDBModel.PP_GetLocations_Result)" />
+    <FunctionImport Name="PP_GetMedicalReports" ReturnType="Collection(DoctorPortalDBModel.PP_GetMedicalReports_Result)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_GetNews" ReturnType="Collection(DoctorPortalDBModel.PP_GetNews_Result)" />
+    <FunctionImport Name="PP_GetPatientEduInfo" ReturnType="Collection(DoctorPortalDBModel.PP_GetPatientEduInfo_Result)" />
+    <FunctionImport Name="PP_GetPatientRefillRequestInformation" ReturnType="Collection(DoctorPortalDBModel.PP_GetPatientRefillRequestInformation_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_GetPatientRegistration" ReturnType="Collection(DoctorPortalDBModel.PP_GetPatientRegistration_Result)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_GetPatientReports" ReturnType="Collection(DoctorPortalDBModel.PP_GetPatientReports_Result)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_GetPatientsForAdmin" ReturnType="Collection(DoctorPortalDBModel.PP_GetPatientsForAdmin_Result)" />
+    <FunctionImport Name="PP_GetSpecilizations" ReturnType="Collection(DoctorPortalDBModel.PP_GetSpecilizations_Result)" />
+    <FunctionImport Name="PP_InsertDepartments">
+      <Parameter Name="Department_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Department_Name" Mode="In" Type="String" />
+      <Parameter Name="Department_Name_Arabic" Mode="In" Type="String" />
+      <Parameter Name="Department_Type_Code" Mode="In" Type="String" />
+      <Parameter Name="Speciality_Code" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="Encoded_By" Mode="In" Type="Int32" />
+      <Parameter Name="Encoded_Date" Mode="In" Type="DateTime" />
+      <Parameter Name="Last_Changed_By" Mode="In" Type="Int32" />
+      <Parameter Name="Last_Changed_Date" Mode="In" Type="DateTime" />
+      <Parameter Name="IsMedical" Mode="In" Type="Boolean" />
+      <Parameter Name="LocationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_InsertDoctors">
+      <Parameter Name="Rec_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Doctor_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Doctor_Name" Mode="In" Type="String" />
+      <Parameter Name="Doctor_Name_Arabic" Mode="In" Type="String" />
+      <Parameter Name="Specialisation_Name" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Location_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Specialization_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Department_code" Mode="In" Type="Int32" />
+      <Parameter Name="FirstSlotForFirstShift" Mode="In" Type="Int32" />
+      <Parameter Name="LastSlotForFirstShift" Mode="In" Type="Int32" />
+      <Parameter Name="FirstSlotForSecondShift" Mode="In" Type="Int32" />
+      <Parameter Name="LastSlotForSecondShift" Mode="In" Type="Int32" />
+      <Parameter Name="IsOPDAppointment" Mode="In" Type="Boolean" />
+      <Parameter Name="filePath" Mode="In" Type="String" />
+      <Parameter Name="IsAramcoAppointment" Mode="In" Type="Boolean" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="IsHOD" Mode="In" Type="Boolean" />
+      <Parameter Name="HODText" Mode="In" Type="String" />
+      <Parameter Name="Designation_Ar" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Description_Ar" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_InsertLocations">
+      <Parameter Name="Location_Code" Mode="In" Type="Int32" />
+      <Parameter Name="LocationEnName" Mode="In" Type="String" />
+      <Parameter Name="LocationArName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="PP_UpdateDepartments">
+      <Parameter Name="Department_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Department_Name" Mode="In" Type="String" />
+      <Parameter Name="Department_Name_Arabic" Mode="In" Type="String" />
+      <Parameter Name="Department_Type_Code" Mode="In" Type="String" />
+      <Parameter Name="Speciality_Code" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="Encoded_By" Mode="In" Type="Int32" />
+      <Parameter Name="Encoded_Date" Mode="In" Type="DateTime" />
+      <Parameter Name="Last_Changed_By" Mode="In" Type="Int32" />
+      <Parameter Name="Last_Changed_Date" Mode="In" Type="DateTime" />
+      <Parameter Name="IsMedical" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="PP_UpdateDoctors">
+      <Parameter Name="Rec_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Doctor_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Doctor_Name" Mode="In" Type="String" />
+      <Parameter Name="Doctor_Name_Arabic" Mode="In" Type="String" />
+      <Parameter Name="Specialisation_Name" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Location_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Specialization_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Department_code" Mode="In" Type="Int32" />
+      <Parameter Name="FirstSlotForFirstShift" Mode="In" Type="Int32" />
+      <Parameter Name="LastSlotForFirstShift" Mode="In" Type="Int32" />
+      <Parameter Name="FirstSlotForSecondShift" Mode="In" Type="Int32" />
+      <Parameter Name="LastSlotForSecondShift" Mode="In" Type="Int32" />
+      <Parameter Name="IsOPDAppointment" Mode="In" Type="Boolean" />
+      <Parameter Name="DocImage" Mode="In" Type="String" />
+      <Parameter Name="IsAramcoAppointment" Mode="In" Type="Boolean" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="IsHOD" Mode="In" Type="Boolean" />
+      <Parameter Name="HODText" Mode="In" Type="String" />
+      <Parameter Name="Designation_Ar" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Description_Ar" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PP_UpdateLocations">
+      <Parameter Name="LocationId" Mode="In" Type="Int32" />
+      <Parameter Name="Location_Code" Mode="In" Type="Int32" />
+      <Parameter Name="LocationEnName" Mode="In" Type="String" />
+      <Parameter Name="LocationArName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="PP_WebApiAllGetDepartments" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiAllGetDepartments_Result)" />
+    <FunctionImport Name="PP_WebApiAllGetSpecilizations" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiAllGetSpecilizations_Result)" />
+    <FunctionImport Name="PP_WebApiGetDepartMents" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiGetDepartMents_Result)">
+      <Parameter Name="LocationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_WebApiGetDoctors" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiGetDoctors_Result)">
+      <Parameter Name="LocationId" Mode="In" Type="Int32" />
+      <Parameter Name="DepartmentId" Mode="In" Type="Int32" />
+      <Parameter Name="SpecializationId" Mode="In" Type="Int32" />
+      <Parameter Name="IsAramco" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_WebApiGetDoctorsAvalSlots" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiGetDoctorsAvalSlots_Result)">
+      <Parameter Name="LocationId" Mode="In" Type="Int32" />
+      <Parameter Name="DepartmentId" Mode="In" Type="Int32" />
+      <Parameter Name="SpecializationId" Mode="In" Type="Int32" />
+      <Parameter Name="DoctorCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PP_WebApiGetDoctorsLeave" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiGetDoctorsLeave_Result)">
+      <Parameter Name="DoctorCode" Mode="In" Type="Int32" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="PP_WebApiGetLocations" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiGetLocations_Result)" />
+    <FunctionImport Name="PP_WebApiGetSpecilizations" ReturnType="Collection(DoctorPortalDBModel.PP_WebApiGetSpecilizations_Result)">
+      <Parameter Name="LocationId" Mode="In" Type="Int32" />
+      <Parameter Name="DepartmentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_APP_GetDoctorAppointment" ReturnType="Collection(DoctorPortalDBModel.proc_APP_GetDoctorAppointment_Result)">
+      <Parameter Name="DoctorCode" Mode="In" Type="Int32" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_App_Doctor_VisitType" ReturnType="Collection(DoctorPortalDBModel.sproc_App_Doctor_VisitType_Result)" />
+    <FunctionImport Name="sproc_App_Doctor_VisitType_Update" ReturnType="Collection(String)">
+      <Parameter Name="doctorcode" Mode="In" Type="Int32" />
+      <Parameter Name="IsOPDAppointment" Mode="In" Type="Boolean" />
+      <Parameter Name="LastChnagedBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_APP_GetPatient" ReturnType="Collection(DoctorPortalDBModel.sproc_APP_GetPatient_Result)">
+      <Parameter Name="Appointment_No" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_APP_GetPatientInfo" ReturnType="Collection(DoctorPortalDBModel.sproc_APP_GetPatientInfo_Result)">
+      <Parameter Name="Appointment_No" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PIS_MedicationREfill_Get" ReturnType="Collection(DoctorPortalDBModel.sproc_PIS_MedicationREfill_Get_Result)">
+      <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="FacilityId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_AddNotification">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+      <Parameter Name="NotificationMessage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_DepartmentMaster" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_DepartmentMaster_Result)" />
+    <FunctionImport Name="sproc_PP_DoctorMaster" ReturnType="Collection(String)">
+      <Parameter Name="Rec_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Doctor_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Doctor_Name" Mode="In" Type="String" />
+      <Parameter Name="Doctor_Name_Arabic" Mode="In" Type="String" />
+      <Parameter Name="Specialization_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Location_Code" Mode="In" Type="Int32" />
+      <Parameter Name="Department_code" Mode="In" Type="Int32" />
+      <Parameter Name="FirstSlotForFirstShift" Mode="In" Type="Int32" />
+      <Parameter Name="LastSlotForFirstShift" Mode="In" Type="Int32" />
+      <Parameter Name="FirstSlotForSecondShift" Mode="In" Type="Int32" />
+      <Parameter Name="LastSlotForSecondShift" Mode="In" Type="Int32" />
+      <Parameter Name="IsOPDAppointment" Mode="In" Type="Boolean" />
+      <Parameter Name="Doctor_Title" Mode="In" Type="String" />
+      <Parameter Name="Education" Mode="In" Type="String" />
+      <Parameter Name="Education_Ar" Mode="In" Type="String" />
+      <Parameter Name="Res_Phone" Mode="In" Type="String" />
+      <Parameter Name="Mob_Phone" Mode="In" Type="String" />
+      <Parameter Name="Work_Phone" Mode="In" Type="String" />
+      <Parameter Name="App_Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Languages" Mode="In" Type="String" />
+      <Parameter Name="ResearchPublications" Mode="In" Type="String" />
+      <Parameter Name="Memberships" Mode="In" Type="String" />
+      <Parameter Name="LangEnglish" Mode="In" Type="Boolean" />
+      <Parameter Name="LangArabic" Mode="In" Type="Boolean" />
+      <Parameter Name="LangHindi" Mode="In" Type="Boolean" />
+      <Parameter Name="LangTagalog" Mode="In" Type="Boolean" />
+      <Parameter Name="LangFrench" Mode="In" Type="Boolean" />
+      <Parameter Name="DocImage" Mode="In" Type="String" />
+      <Parameter Name="IsAramcoAppointment" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_DoctorMasterList" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_DoctorMasterList_Result)" />
+    <FunctionImport Name="sproc_PP_GetFromIT">
+      <Parameter Name="PatientRegistrationRecId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_LocationMaster" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_LocationMaster_Result)" />
+    <FunctionImport Name="sproc_PP_PatientFeedBack" ReturnType="Collection(String)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+      <Parameter Name="FeedbackId" Mode="In" Type="Int32" />
+      <Parameter Name="NotificationType" Mode="In" Type="String" />
+      <Parameter Name="NotificationMessage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBack_IT" ReturnType="Collection(String)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+      <Parameter Name="FeedbackId" Mode="In" Type="Int32" />
+      <Parameter Name="NotificationType" Mode="In" Type="String" />
+      <Parameter Name="NotificationMessage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBack_Pharmacy" ReturnType="Collection(String)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+      <Parameter Name="FeedbackId" Mode="In" Type="Int32" />
+      <Parameter Name="NotificationType" Mode="In" Type="String" />
+      <Parameter Name="NotificationMessage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBack_ResetPassword" ReturnType="Collection(String)">
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBack_Sickleave" ReturnType="Collection(String)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+      <Parameter Name="FeedbackId" Mode="In" Type="Int32" />
+      <Parameter Name="NotificationType" Mode="In" Type="String" />
+      <Parameter Name="NotificationMessage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGet">
+      <Parameter Name="SearchForPeriod" Mode="In" Type="String" />
+      <Parameter Name="DateFrom" Mode="In" Type="String" />
+      <Parameter Name="DateTo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGet_IT">
+      <Parameter Name="SearchForPeriod" Mode="In" Type="String" />
+      <Parameter Name="DateFrom" Mode="In" Type="String" />
+      <Parameter Name="DateTo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGet_Pharmacy">
+      <Parameter Name="SearchForPeriod" Mode="In" Type="String" />
+      <Parameter Name="DateFrom" Mode="In" Type="String" />
+      <Parameter Name="DateTo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGet_SickLeave">
+      <Parameter Name="SearchForPeriod" Mode="In" Type="String" />
+      <Parameter Name="DateFrom" Mode="In" Type="String" />
+      <Parameter Name="DateTo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGetConversation" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_Result)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGetConversation_IT" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_IT_Result)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+      <Parameter Name="FeedbackId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGetConversation_Pharmacy" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_Pharmacy_Result)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_PatientFeedBackGetConversation_SickLeave" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_PatientFeedBackGetConversation_SickLeave_Result)">
+      <Parameter Name="PatientRegId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_ResetPassword_GetInformation">
+      <Parameter Name="NationalIDorIqamaID" Mode="In" Type="String" />
+      <Parameter Name="MobileNo" Mode="In" Type="String" />
+      <Parameter Name="MRNo" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="PatientRecID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_ResetPassword_UpdateInfo" ReturnType="Collection(String)">
+      <Parameter Name="IsReset" Mode="In" Type="Boolean" />
+      <Parameter Name="PatientRecID" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="String" />
+      <Parameter Name="MRNo" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="FatherName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="String" />
+      <Parameter Name="NationalIDorIqamaID" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="MobileNo" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_SendForIT">
+      <Parameter Name="PatientRegistrationRecId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PP_SpecialisationMaster" ReturnType="Collection(DoctorPortalDBModel.sproc_PP_SpecialisationMaster_Result)" />
+    <FunctionImport Name="sproc_PP_UpdateSearchDone">
+      <Parameter Name="PatientRegistrationRecId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PRG_GetWebPatientRegistration" ReturnType="Collection(DoctorPortalDBModel.sproc_PRG_GetWebPatientRegistration_Result)">
+      <Parameter Name="Date1" Mode="In" Type="String" />
+      <Parameter Name="Date2" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sproc_PRG_VerifyRegistration">
+      <Parameter Name="PatientRegistrationRecId" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="FatherName" Mode="In" Type="String" />
+      <Parameter Name="GrandFatherName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="BloodGroup" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="String" />
+      <Parameter Name="NationalIDorIqamaID" Mode="In" Type="String" />
+      <Parameter Name="PassportNo" Mode="In" Type="String" />
+      <Parameter Name="Religion" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="MRNo" Mode="In" Type="String" />
+      <Parameter Name="IsAramcoPatient" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="PP_AddDependents_Result">
+    <Property Type="Int32" Name="AddDependentID" Nullable="false" />
+    <Property Type="String" Name="MobileNo" Nullable="true" />
+    <Property Type="String" Name="NationalID" Nullable="true" />
+    <Property Type="String" Name="RegistrationNo" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RelationWithMe" Nullable="true" />
+    <Property Type="String" Name="UserID" Nullable="true" />
+    <Property Type="String" Name="RelationwithmeArabic" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GrandFatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="PP_Doctor_Appointments_Result">
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="Shift_type" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Appointment_Source" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Location_Code" Nullable="true" MaxLength="3" />
+    <Property Type="DateTime" Name="Appointment_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Appointment_No" Nullable="true" />
+    <Property Type="String" Name="Doctor_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Doctor_Name_Arabic" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="LocationEnName" Nullable="true" />
+    <Property Type="String" Name="LocationArName" Nullable="true" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Department_Name_Arabic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Specialisation_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name_Arabic" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="PP_GetDepartments_Result">
+    <Property Type="Int32" Name="Department_Code" Nullable="false" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Department_Name_Arabic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Department_Type_Code" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Speciality_Code" Nullable="true" MaxLength="6" />
+    <Property Type="Boolean" Name="Status" Nullable="false" />
+    <Property Type="Int32" Name="Encoded_By" Nullable="true" />
+    <Property Type="DateTime" Name="Encoded_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Last_Changed_By" Nullable="true" />
+    <Property Type="DateTime" Name="Last_Changed_Date" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsMedical" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_GetDoctors_Result">
+    <Property Type="Int32" Name="Rec_Id" Nullable="false" />
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="Doctor_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Doctor_Name_Arabic" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Location_Code" Nullable="false" />
+    <Property Type="Int32" Name="Specialization_Code" Nullable="true" />
+    <Property Type="Int32" Name="Department_code" Nullable="true" />
+    <Property Type="Int32" Name="FirstSlotForFirstShift" Nullable="true" />
+    <Property Type="Int32" Name="LastSlotForFirstShift" Nullable="true" />
+    <Property Type="Int32" Name="FirstSlotForSecondShift" Nullable="true" />
+    <Property Type="Int32" Name="LastSlotForSecondShift" Nullable="true" />
+    <Property Type="Boolean" Name="IsOPDAppointment" Nullable="true" />
+    <Property Type="String" Name="Doctor_Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Education" Nullable="true" />
+    <Property Type="String" Name="Education_Ar" Nullable="true" />
+    <Property Type="String" Name="Res_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mob_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Work_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="App_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Languages" Nullable="true" />
+    <Property Type="String" Name="ResearchPublications" Nullable="true" />
+    <Property Type="String" Name="Memberships" Nullable="true" />
+    <Property Type="Boolean" Name="LangEnglish" Nullable="true" />
+    <Property Type="Boolean" Name="LangArabic" Nullable="true" />
+    <Property Type="Boolean" Name="LangHindi" Nullable="true" />
+    <Property Type="Boolean" Name="LangTagalog" Nullable="true" />
+    <Property Type="Boolean" Name="LangFrench" Nullable="true" />
+    <Property Type="String" Name="DocImage" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsAramcoAppointment" Nullable="true" />
+    <Property Type="String" Name="Qualification" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHOD" Nullable="true" />
+    <Property Type="String" Name="HODText" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDatetime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Designation_Ar" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="String" Name="Description_Ar" Nullable="true" />
+    <Property Type="String" Name="DoctorPassword" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LocationEnName" Nullable="true" />
+    <Property Type="String" Name="LocationArName" Nullable="true" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Department_Name_Arabic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Specialisation_Name1" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name_Arabic" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="PP_GetFeedback_Result">
+    <Property Type="Int32" Name="FeedbackId" Nullable="false" />
+    <Property Type="String" Name="MRNo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="FeedbackDescription" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="ReplyMessage" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PatientRegId" Nullable="true" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="PP_GetLabReports_Result">
+    <Property Type="Int32" Name="LabReportId" Nullable="false" />
+    <Property Type="String" Name="LabReportEnName" Nullable="true" />
+    <Property Type="String" Name="LabReportArName" Nullable="true" />
+    <Property Type="Int32" Name="DoctorCode" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LocationCode" Nullable="true" />
+    <Property Type="Int32" Name="ICDCode" Nullable="true" />
+    <Property Type="String" Name="ICDDescription" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_GetLocations_Result">
+    <Property Type="Int32" Name="LocationId" Nullable="false" />
+    <Property Type="Int32" Name="Location_Code" Nullable="true" />
+    <Property Type="String" Name="LocationEnName" Nullable="true" />
+    <Property Type="String" Name="LocationArName" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_GetMedicalReports_Result">
+    <Property Type="Int32" Name="MedicalReportId" Nullable="false" />
+    <Property Type="String" Name="MedicalReportEnName" Nullable="true" />
+    <Property Type="String" Name="MedicalReportArName" Nullable="true" />
+    <Property Type="Int32" Name="DoctorCode" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LocationCode" Nullable="true" />
+    <Property Type="Int32" Name="ICDCode" Nullable="true" />
+    <Property Type="String" Name="ICDDescription" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_GetNews_Result">
+    <Property Type="Int32" Name="NewsId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Int32" Name="Type" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Rank" Nullable="false" />
+    <Property Type="Boolean" Name="Visible" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_GetPatientEduInfo_Result">
+    <Property Type="Int32" Name="PatientEducationId" Nullable="false" />
+    <Property Type="String" Name="FileName" Nullable="true" />
+    <Property Type="String" Name="FilePath" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="FilenameArabic" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_GetPatientRefillRequestInformation_Result">
+    <Property Type="Int32" Name="PatientRequestId" Nullable="false" />
+    <Property Type="String" Name="MRNo" Nullable="true" />
+    <Property Type="Int32" Name="LocationId" Nullable="true" />
+    <Property Type="Int32" Name="SpecilizationId" Nullable="true" />
+    <Property Type="Int32" Name="DoctorCode" Nullable="true" />
+    <Property Type="String" Name="RequestType" Nullable="true" />
+    <Property Type="DateTime" Name="PlannedReleaseDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="String" Name="RequestStatus" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="PatientRegId" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="ReplyMessage" Nullable="true" />
+    <Property Type="DateTime" Name="ReplyDatetime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LocationEnName" Nullable="true" />
+    <Property Type="String" Name="LocationArName" Nullable="true" />
+    <Property Type="String" Name="Specialisation_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name_Arabic" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Doctor_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Doctor_Name_Arabic" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="PP_GetPatientRegistration_Result">
+    <Property Type="String" Name="PatientRegistrationRecId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GrandFatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaterityStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BloodGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NationalIDorIqamaID" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="PassportNo" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Religion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RelationShip" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NextOfKinName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NextOfKinMobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VerificationStatus" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MRNo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="Boolean" Name="IsAramcoPatient" Nullable="true" />
+    <Property Type="Boolean" Name="IsSearchDone" Nullable="true" />
+    <Property Type="Int32" Name="LocationCode" Nullable="true" />
+    <Property Type="Boolean" Name="IsAlreadyRegistered" Nullable="true" />
+    <Property Type="Boolean" Name="ShowMessage" Nullable="true" />
+    <Property Type="String" Name="NotificationMessage" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsForIT" Nullable="true" />
+    <Property Type="Boolean" Name="BlockAppointments" Nullable="true" />
+    <Property Type="String" Name="InsuranceType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AramcoID" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="PP_GetPatientReports_Result">
+    <Property Type="Int32" Name="PatientReportId" Nullable="false" />
+    <Property Type="String" Name="PatientReportEnName" Nullable="true" />
+    <Property Type="String" Name="PatientReportArName" Nullable="true" />
+    <Property Type="Int32" Name="DoctorCode" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LocationCode" Nullable="true" />
+    <Property Type="Int32" Name="ICDCode" Nullable="true" />
+    <Property Type="String" Name="ICDDescription" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_GetPatientsForAdmin_Result">
+    <Property Type="String" Name="PatientRegistrationRecId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GrandFatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaterityStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BloodGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NationalIDorIqamaID" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="PassportNo" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Religion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RelationShip" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NextOfKinName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NextOfKinMobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VerificationStatus" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MRNo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="Boolean" Name="IsAramcoPatient" Nullable="true" />
+    <Property Type="Boolean" Name="IsSearchDone" Nullable="true" />
+    <Property Type="Int32" Name="LocationCode" Nullable="true" />
+    <Property Type="Boolean" Name="IsAlreadyRegistered" Nullable="true" />
+    <Property Type="Boolean" Name="ShowMessage" Nullable="true" />
+    <Property Type="String" Name="NotificationMessage" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsForIT" Nullable="true" />
+    <Property Type="Boolean" Name="BlockAppointments" Nullable="true" />
+    <Property Type="String" Name="InsuranceType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AramcoID" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="PP_GetSpecilizations_Result">
+    <Property Type="String" Name="Specialisation_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name_Arabic" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="Specialisation_Code" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiAllGetDepartments_Result">
+    <Property Type="Int32" Name="Department_Code" Nullable="false" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Department_Name_Arabic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Department_Type_Code" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Speciality_Code" Nullable="true" MaxLength="6" />
+    <Property Type="Boolean" Name="Status" Nullable="false" />
+    <Property Type="Int32" Name="Encoded_By" Nullable="true" />
+    <Property Type="DateTime" Name="Encoded_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Last_Changed_By" Nullable="true" />
+    <Property Type="DateTime" Name="Last_Changed_Date" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsMedical" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiAllGetSpecilizations_Result">
+    <Property Type="Int32" Name="Rec_Id" Nullable="false" />
+    <Property Type="String" Name="Specialisation_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name_Arabic" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="Location_Code" Nullable="false" />
+    <Property Type="String" Name="Specialisation_Location" Nullable="false" MaxLength="1" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="ForPortal" Nullable="true" />
+    <Property Type="Int32" Name="Department_Code" Nullable="true" />
+    <Property Type="Int32" Name="Specialisation_Code" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiGetDepartMents_Result">
+    <Property Type="Int32" Name="Department_Code" Nullable="false" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Department_Name_Arabic" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiGetDoctors_Result">
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="Doctor_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Doctor_Name_Arabic" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="DocImage" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsOPDAppointment" Nullable="true" />
+    <Property Type="Int32" Name="FirstSlotForFirstShift" Nullable="true" />
+    <Property Type="Int32" Name="LastSlotForFirstShift" Nullable="true" />
+    <Property Type="Int32" Name="FirstSlotForSecondShift" Nullable="true" />
+    <Property Type="Int32" Name="LastSlotForSecondShift" Nullable="true" />
+    <Property Type="String" Name="LocationEnName" Nullable="true" />
+    <Property Type="String" Name="LocationArName" Nullable="true" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Department_Name_Arabic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Specialisation_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name_Arabic" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Qualification" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Designation_Ar" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHOD" Nullable="true" />
+    <Property Type="String" Name="HODText" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="String" Name="Description_Ar" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiGetDoctorsAvalSlots_Result">
+    <Property Type="Int32" Name="Rec_Id" Nullable="false" />
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="Doctor_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Doctor_Name_Arabic" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="shift_one_from" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="shift_one_to" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="shift_second_from" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="shift_second_to" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiGetDoctorsLeave_Result">
+    <Property Type="Int32" Name="Leave_ID" Nullable="false" />
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="DateTime" Name="From_Date" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="To_Date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Leave_Type" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="Encoded_By" Nullable="true" />
+    <Property Type="DateTime" Name="Encoded_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Last_Changed_By" Nullable="true" />
+    <Property Type="DateTime" Name="Last_Changed_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="HIS_Leave_ID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiGetLocations_Result">
+    <Property Type="Int32" Name="LocationId" Nullable="false" />
+    <Property Type="Int32" Name="Location_Code" Nullable="true" />
+    <Property Type="String" Name="LocationEnName" Nullable="true" />
+    <Property Type="String" Name="LocationArName" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PP_WebApiGetSpecilizations_Result">
+    <Property Type="Int32" Name="Rec_Id" Nullable="false" />
+    <Property Type="String" Name="Specialisation_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Specialisation_Name_Arabic" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="Location_Code" Nullable="false" />
+    <Property Type="String" Name="Specialisation_Location" Nullable="false" MaxLength="1" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="ForPortal" Nullable="true" />
+    <Property Type="Int32" Name="Department_Code" Nullable="true" />
+    <Property Type="Int32" Name="Specialisation_Code" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_APP_GetDoctorAppointment_Result">
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="Appointment_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Appointment_No" Nullable="true" />
+    <Property Type="String" Name="PatientName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="String" Name="MRNo" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sproc_App_Doctor_VisitType_Result">
+    <Property Type="Boolean" Name="IsOPDAppointment" Nullable="true" />
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="Doctor_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="VisitType" Nullable="false" MaxLength="23" />
+  </ComplexType>
+  <ComplexType Name="sproc_APP_GetPatient_Result">
+    <Property Type="DateTime" Name="Appointment_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GrandFatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MRNo" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sproc_APP_GetPatientInfo_Result">
+    <Property Type="DateTime" Name="Appointment_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="PatientName" Nullable="false" MaxLength="203" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MRNo" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sproc_PIS_MedicationREfill_Get_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int16" Name="FacilityId" Nullable="false" />
+    <Property Type="Int32" Name="RegistrationId" Nullable="false" />
+    <Property Type="String" Name="PatientName" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="DoctorName" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="PreferredDateToCollect" Nullable="false" />
+    <Property Type="Time" Name="PreferredTimeToCollect" Nullable="false" />
+    <Property Type="String" Name="Reply" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="ReplyDateTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_DepartmentMaster_Result">
+    <Property Type="Int32" Name="Department_Code" Nullable="false" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_DoctorMasterList_Result">
+    <Property Type="Int32" Name="Rec_Id" Nullable="false" />
+    <Property Type="Int32" Name="Doctor_Code" Nullable="false" />
+    <Property Type="String" Name="Doctor_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Provider" Nullable="true" MaxLength="165" />
+    <Property Type="String" Name="Doctor_Name_Arabic" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Location_Code" Nullable="true" MaxLength="2" />
+    <Property Type="Int32" Name="Specialization_Code" Nullable="true" />
+    <Property Type="Int32" Name="Department_code" Nullable="true" />
+    <Property Type="Int32" Name="FirstSlotForFirstShift" Nullable="true" />
+    <Property Type="Int32" Name="LastSlotForFirstShift" Nullable="true" />
+    <Property Type="Int32" Name="FirstSlotForSecondShift" Nullable="true" />
+    <Property Type="Int32" Name="LastSlotForSecondShift" Nullable="true" />
+    <Property Type="Boolean" Name="IsOPDAppointment" Nullable="false" />
+    <Property Type="String" Name="Doctor_Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Education" Nullable="true" />
+    <Property Type="String" Name="Education_Ar" Nullable="true" />
+    <Property Type="String" Name="Res_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mob_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Work_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="App_Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Languages" Nullable="true" />
+    <Property Type="String" Name="ResearchPublications" Nullable="true" />
+    <Property Type="String" Name="Memberships" Nullable="true" />
+    <Property Type="Boolean" Name="LangEnglish" Nullable="false" />
+    <Property Type="Boolean" Name="LangArabic" Nullable="false" />
+    <Property Type="Boolean" Name="LangHindi" Nullable="false" />
+    <Property Type="Boolean" Name="LangTagalog" Nullable="false" />
+    <Property Type="Boolean" Name="LangFrench" Nullable="false" />
+    <Property Type="String" Name="DocImage" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsAramcoAppointment" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_LocationMaster_Result">
+    <Property Type="String" Name="Location_Code" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="LocationEnName" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_PatientFeedBackGetConversation_Result">
+    <Property Type="String" Name="FormattedDated" Nullable="true" MaxLength="28" />
+    <Property Type="String" Name="PatientName" Nullable="false" MaxLength="153" />
+    <Property Type="String" Name="FeedbackDescription" Nullable="true" />
+    <Property Type="String" Name="ReplyMessage" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Conversations" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_PatientFeedBackGetConversation_IT_Result">
+    <Property Type="String" Name="FormattedDated" Nullable="true" MaxLength="28" />
+    <Property Type="String" Name="PatientName" Nullable="false" MaxLength="153" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FeedbackDescription" Nullable="true" />
+    <Property Type="String" Name="ReplyMessage" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Conversations" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_PatientFeedBackGetConversation_Pharmacy_Result">
+    <Property Type="String" Name="FormattedDated" Nullable="true" MaxLength="28" />
+    <Property Type="String" Name="PatientName" Nullable="false" MaxLength="153" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="String" Name="ReplyMessage" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Conversations" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_PatientFeedBackGetConversation_SickLeave_Result">
+    <Property Type="String" Name="FormattedDated" Nullable="true" MaxLength="28" />
+    <Property Type="String" Name="PatientName" Nullable="false" MaxLength="153" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="String" Name="ReplyMessage" Nullable="true" />
+    <Property Type="DateTime" Name="PreferedDatetime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Conversations" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sproc_PP_SpecialisationMaster_Result">
+    <Property Type="Int32" Name="Specialisation_Code" Nullable="true" />
+    <Property Type="String" Name="Specialisation_Name" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sproc_PRG_GetWebPatientRegistration_Result">
+    <Property Type="Int32" Name="locationCode" Nullable="true" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="PatientRegistrationRecId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GrandFatherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DateOfBirth" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaterityStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BloodGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NationalIDorIqamaID" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="PassportNo" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Religion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RelationShip" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NextOfKinName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NextOfKinMobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VerificationStatus" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastChangedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastChangedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MRNo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="Boolean" Name="IsSearchDone" Nullable="true" />
+    <Property Type="Boolean" Name="IsForIT" Nullable="false" />
+  </ComplexType>
+</Schema>
