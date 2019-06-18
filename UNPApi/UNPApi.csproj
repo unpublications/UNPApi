@@ -218,14 +218,218 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AwardsController.cs" />
+    <Compile Include="Controllers\ConferenceController.cs" />
+    <Compile Include="Controllers\ConferenceVisitsController.cs" />
+    <Compile Include="Controllers\EPosterController.cs" />
+    <Compile Include="Controllers\EventButtonsController.cs" />
+    <Compile Include="Controllers\EVideoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrganizingCommiteController.cs" />
+    <Compile Include="Controllers\ProgramScheduleController.cs" />
+    <Compile Include="Controllers\ReadBaseController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="JwtClaimTypes.cs" />
+    <Compile Include="Manager\AwardsManager.cs" />
+    <Compile Include="Manager\ConferenceManager.cs" />
+    <Compile Include="Manager\ConferenceVisitsManager.cs" />
+    <Compile Include="Manager\EPosterManager.cs" />
+    <Compile Include="Manager\EventButtonsManager.cs" />
+    <Compile Include="Manager\EVideoManager.cs" />
+    <Compile Include="Manager\OrganizingCommiteManager.cs" />
+    <Compile Include="Manager\ProgramScheduleManager.cs" />
+    <Compile Include="Manager\ReadBaseManager.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\tbl_about_city.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_about_us.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_addon_reg.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_awards.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_cfp.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_city_images.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_combo.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_conference.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_conf_abstract.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_conf_subject.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_contact.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_contact_us.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_continent.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_con_br.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_country.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_coupon_addon.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_coupon_exhibitor.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_coupon_sponsor.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_coupon_user.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_csumry.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_down_br.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_eposter.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_event_buttons.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_event_contact.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_evideo.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_exbh_reg.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_exhibitor.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_faq.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_highlights.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_hotel_address.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_hotel_images.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_imp_date.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_imp_dates_master.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_imp_links.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_mails.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_messages.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_mkt_anlys.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_newsletter.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_ogc.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_package.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_pack_reg.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_part_reg.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_part_reg_exbhi.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_part_reg_spon.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_payment_terms.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_paypal_payments.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_photos.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_plan_details.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_plan_pagecombo.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_ps.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_rb.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_site_contact.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_site_terms.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_site_visits.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_social.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_sponsor.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_spon_reg.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_subject.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_tax_mst.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_user.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_venue.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_videos.cs">
+      <DependentUpon>UNPEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UNPEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -240,9 +444,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UNPEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserProfile.cs">
-      <DependentUpon>UNPEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TokenValidationHandler.cs" />

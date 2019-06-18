@@ -1,17 +1,899 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="UNPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="UserProfile">
+  <EntityType Name="tbl_about_city">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="uniq_id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserName" Type="varchar" MaxLength="50" />
-    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Address" Type="varchar" MaxLength="50" />
-    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="6" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_about_us">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_addon_reg">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack" Type="varchar" MaxLength="255" />
+    <Property Name="pack_name" Type="varchar" MaxLength="255" />
+    <Property Name="date_1" Type="date" />
+    <Property Name="gbp_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="euro_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="usd_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_awards">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="tbl_image" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_cat" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_university" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_research" Type="varchar(max)" />
+    <Property Name="tbl_bio" Type="varchar(max)" />
+    <Property Name="tbl_place" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_desg" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_cfp">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_city_images">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar(max)" />
+    <Property Name="tbl_image" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_combo">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_con_br">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="br_conference" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="br_file" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_conf_abstract">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_title" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_fname" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_lname" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_country" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_phone" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_cat" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_track" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_address" Type="varchar(max)" />
+    <Property Name="tbl_file" Type="varchar" MaxLength="255" />
+    <Property Name="conf_name" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_conf_subject">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_name" Type="varchar" MaxLength="400" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_conference">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="con_title" Type="varchar(max)" />
+    <Property Name="con_date" Type="date" />
+    <Property Name="con_place" Type="varchar(max)" />
+    <Property Name="con_theme" Type="varchar(max)" />
+    <Property Name="con_left_logo" Type="varchar" MaxLength="255" />
+    <Property Name="con_right_logo" Type="varchar" MaxLength="255" />
+    <Property Name="con_banner" Type="varchar" MaxLength="255" />
+    <Property Name="con_subject" Type="varchar(max)" />
+    <Property Name="con_subject_id" Type="varchar" MaxLength="255" />
+    <Property Name="con_country" Type="varchar(max)" />
+    <Property Name="con_country_id" Type="varchar" MaxLength="255" />
+    <Property Name="con_contact_desk" Type="varchar(max)" />
+    <Property Name="con_opt_1" Type="varchar" MaxLength="255" />
+    <Property Name="con_opt_2" Type="varchar" MaxLength="255" />
+    <Property Name="con_opt_3" Type="varchar" MaxLength="255" />
+    <Property Name="con_opt_4" Type="varchar" MaxLength="255" />
+    <Property Name="con_opt_5" Type="varchar" MaxLength="255" />
+    <Property Name="con_opt_6" Type="varchar" MaxLength="255" />
+    <Property Name="con_t" Type="varchar" MaxLength="255" />
+    <Property Name="con_b" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_contact">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_phone" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_message" Type="varchar(max)" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_contact_us">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_continent">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="continent_name" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_country">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="country_name" Type="varchar" MaxLength="255" />
+    <Property Name="continent_name" Type="varchar" MaxLength="255" />
+    <Property Name="continent_code" Type="varchar" MaxLength="255" />
+    <Property Name="country_flag" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_coupon_addon">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_date" Type="date" />
+    <Property Name="tbl_discount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_remarks" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_coupon_exhibitor">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_date" Type="date" />
+    <Property Name="tbl_discount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_remarks" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_coupon_sponsor">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_date" Type="date" />
+    <Property Name="tbl_discount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_remarks" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_coupon_user">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack" Type="varchar" MaxLength="255" />
+    <Property Name="pack_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_date" Type="date" />
+    <Property Name="tbl_discount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_remarks" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_csumry">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_down_br">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_phone" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_research" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_university" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_country" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_eposter">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="ogc_name" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_desg" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_place" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_bio" Type="varchar(max)" />
+    <Property Name="ogc_research" Type="varchar(max)" />
+    <Property Name="ogc_photo" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_conference" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_university" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_event_buttons">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar(max)" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_summary" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_imp_dates" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_call_paper" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_market_anly" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_broucher" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_imp_links" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_venue" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_contact" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_eposter" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_evideo" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_event_contact">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail_name1" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail_1" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail_name2" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail_2" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail_name3" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail_3" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_contact_name1" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_contact_1" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_contact_name2" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_contact_2" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_contact_name3" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_contact_3" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_evideo">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="ogc_name" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_desg" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_place" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_bio" Type="varchar(max)" />
+    <Property Name="ogc_research" Type="varchar(max)" />
+    <Property Name="ogc_photo" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_conference" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_university" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_exbh_reg">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack" Type="varchar" MaxLength="255" />
+    <Property Name="pack_name" Type="varchar" MaxLength="255" />
+    <Property Name="date_1" Type="date" />
+    <Property Name="gbp_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="euro_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="usd_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_exhibitor">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="ph_title" Type="varchar" MaxLength="255" />
+    <Property Name="ph_image" Type="varchar" MaxLength="255" />
+    <Property Name="ph_conference" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_faq">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_question" Type="varchar(max)" />
+    <Property Name="tbl_answer" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_highlights">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_hotel_address">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="tbl_address" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_hotel_images">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar(max)" />
+    <Property Name="tbl_image" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_imp_date">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="tbl_date" Type="date" />
+    <Property Name="tbl_master" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_imp_dates_master">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_imp_links">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="tbl_social_name" Type="varchar(max)" />
+    <Property Name="tbl_icon" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_mails">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_mailid" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pass" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_messages">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="msg_name" Type="varchar" MaxLength="255" />
+    <Property Name="msg_mail" Type="varchar" MaxLength="255" />
+    <Property Name="msg_phone" Type="varchar" MaxLength="255" />
+    <Property Name="msg_message" Type="varchar(max)" />
+    <Property Name="msg_ip" Type="varchar" MaxLength="255" />
+    <Property Name="msg_browser" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_mkt_anlys">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_newsletter">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="nl_name" Type="varchar" MaxLength="255" />
+    <Property Name="nl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="nl_phone" Type="varchar" MaxLength="255" />
+    <Property Name="nl_intrest" Type="varchar" MaxLength="255" />
+    <Property Name="nl_ip" Type="varchar" MaxLength="255" />
+    <Property Name="nl_browser" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ogc">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" Nullable="false" />
+    <Property Name="ogc_name" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_desg" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_place" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_bio" Type="varchar(max)" />
+    <Property Name="ogc_research" Type="varchar(max)" />
+    <Property Name="ogc_photo" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_conference" Type="varchar" MaxLength="255" />
+    <Property Name="ogc_university" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_pack_reg">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack" Type="varchar" MaxLength="255" />
+    <Property Name="pack_id" Type="varchar" MaxLength="255" />
+    <Property Name="pack_name" Type="varchar" MaxLength="255" />
+    <Property Name="pack_desc" Type="varchar(max)" />
+    <Property Name="date_1" Type="date" />
+    <Property Name="date_2" Type="date" />
+    <Property Name="date_3" Type="date" />
+    <Property Name="gbp_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="gbp_2" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="gbp_3" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="euro_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="euro_2" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="euro_3" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="usd_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="usd_2" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="usd_3" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_package">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_part_reg">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_user_name" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_txn_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack_a" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack_b" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack_c" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_company" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_city" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_state" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_country" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_phone" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_address" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_cat" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_talk" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_currency" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_grand_total" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_reg_stastus" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_part_reg_exbhi">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_user_name" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_txn_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack_a" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_company" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_city" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_state" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_country" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_phone" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_address" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_currency" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_total" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_discount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_tax" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_grand_total" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_reg_stastus" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_part_reg_spon">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="tbl_user_name" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_txn_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack_a" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_company" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_city" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_state" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_country" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_mail" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_phone" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_address" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_currency" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_total" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_discount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_tax" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_grand_total" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_reg_stastus" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_payment_terms">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_terms" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="Id_new" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EventUN.dbo.tbl_paypal_payments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_paypal_payments">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="txnid" />
+      <PropertyRef Name="payment_amount" />
+      <PropertyRef Name="payment_status" />
+      <PropertyRef Name="itemid" />
+      <PropertyRef Name="createdtime" />
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txnid" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="payment_amount" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="payment_status" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="itemid" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="createdtime" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="uniq_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_photos">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ph_title" Type="varchar" MaxLength="255" />
+    <Property Name="ph_desc" Type="varchar" MaxLength="255" />
+    <Property Name="ph_image" Type="varchar" MaxLength="255" />
+    <Property Name="ph_conference" Type="varchar(max)" />
+    <Property Name="tbl_conf" Type="varchar(max)" Nullable="false" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="Id_new" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_plan_details">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_details" Type="varchar(max)" />
+    <Property Name="tbl_plan_page" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_plan_pagecombo">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="Id_new" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ps">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ps_name" Type="varchar" MaxLength="255" />
+    <Property Name="ps_conference" Type="varchar" MaxLength="255" />
+    <Property Name="ps_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="ps_file" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="Id_new" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_rb">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rb_name" Type="varchar" MaxLength="255" />
+    <Property Name="rb_conference" Type="varchar" MaxLength="255" />
+    <Property Name="rb_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_site_contact">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="msg_name" Type="varchar" MaxLength="255" />
+    <Property Name="msg_mail" Type="varchar" MaxLength="255" />
+    <Property Name="msg_subject" Type="varchar" MaxLength="255" />
+    <Property Name="msg_message" Type="varchar(max)" />
+    <Property Name="msg_ip" Type="varchar" MaxLength="255" />
+    <Property Name="msg_browser" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="Id_new" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_site_terms">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_terms" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="Id_new" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_site_visits">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_ip" Type="varchar(max)" />
+    <Property Name="tbl_country" Type="varchar(max)" />
+    <Property Name="tbl_region" Type="varchar(max)" />
+    <Property Name="tbl_city" Type="varchar(max)" />
+    <Property Name="tbl_browser" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_social">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_name" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_icon" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_spon_reg">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_pack" Type="varchar" MaxLength="255" />
+    <Property Name="pack_name" Type="varchar" MaxLength="255" />
+    <Property Name="date_1" Type="date" />
+    <Property Name="gbp_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="euro_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="usd_1" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_sponsor">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ph_title" Type="varchar" MaxLength="255" />
+    <Property Name="ph_image" Type="varchar" MaxLength="255" />
+    <Property Name="ph_conference" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_subject">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sub_name" Type="varchar" MaxLength="255" />
+    <Property Name="content_name" Type="varchar(max)" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_tax_mst">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_tax_usd" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_tax_gbp" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tbl_tax_euro" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="access" Type="int" Nullable="false" />
+    <Property Name="conf_name" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="user_mail" Type="varchar" MaxLength="255" />
+    <Property Name="user_name" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_venue">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_conf" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_lat" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_long" Type="varchar" MaxLength="255" />
+    <Property Name="tbl_content" Type="varchar(max)" />
+    <Property Name="conf_id" Type="varchar" MaxLength="255" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_videos">
+    <Key>
+      <PropertyRef Name="uniq_id" />
+    </Key>
+    <Property Name="uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vid_owner" Type="varchar" MaxLength="255" />
+    <Property Name="vid_desc" Type="varchar" MaxLength="1" />
+    <Property Name="vid_topic" Type="varchar" MaxLength="255" />
+    <Property Name="vid_place" Type="varchar" MaxLength="255" />
+    <Property Name="vid_date" Type="varchar" MaxLength="255" />
+    <Property Name="vid_source" Type="varchar(max)" />
+    <Property Name="tbl_conf" Type="varchar(max)" Nullable="false" />
+    <Property Name="tbl_conf_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="tr_date" Type="datetime2" Precision="0" Nullable="false" />
   </EntityType>
   <EntityContainer Name="UNPModelStoreContainer">
-    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_about_city" EntityType="Self.tbl_about_city" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_about_us" EntityType="Self.tbl_about_us" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_addon_reg" EntityType="Self.tbl_addon_reg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_awards" EntityType="Self.tbl_awards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_cfp" EntityType="Self.tbl_cfp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_city_images" EntityType="Self.tbl_city_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_combo" EntityType="Self.tbl_combo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_con_br" EntityType="Self.tbl_con_br" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_conf_abstract" EntityType="Self.tbl_conf_abstract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_conf_subject" EntityType="Self.tbl_conf_subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_conference" EntityType="Self.tbl_conference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_contact" EntityType="Self.tbl_contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_contact_us" EntityType="Self.tbl_contact_us" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_continent" EntityType="Self.tbl_continent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_country" EntityType="Self.tbl_country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_coupon_addon" EntityType="Self.tbl_coupon_addon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_coupon_exhibitor" EntityType="Self.tbl_coupon_exhibitor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_coupon_sponsor" EntityType="Self.tbl_coupon_sponsor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_coupon_user" EntityType="Self.tbl_coupon_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_csumry" EntityType="Self.tbl_csumry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_down_br" EntityType="Self.tbl_down_br" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_eposter" EntityType="Self.tbl_eposter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_event_buttons" EntityType="Self.tbl_event_buttons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_event_contact" EntityType="Self.tbl_event_contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_evideo" EntityType="Self.tbl_evideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_exbh_reg" EntityType="Self.tbl_exbh_reg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_exhibitor" EntityType="Self.tbl_exhibitor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_faq" EntityType="Self.tbl_faq" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_highlights" EntityType="Self.tbl_highlights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hotel_address" EntityType="Self.tbl_hotel_address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hotel_images" EntityType="Self.tbl_hotel_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_imp_date" EntityType="Self.tbl_imp_date" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_imp_dates_master" EntityType="Self.tbl_imp_dates_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_imp_links" EntityType="Self.tbl_imp_links" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_mails" EntityType="Self.tbl_mails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_messages" EntityType="Self.tbl_messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_mkt_anlys" EntityType="Self.tbl_mkt_anlys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_newsletter" EntityType="Self.tbl_newsletter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ogc" EntityType="Self.tbl_ogc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_pack_reg" EntityType="Self.tbl_pack_reg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_package" EntityType="Self.tbl_package" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_part_reg" EntityType="Self.tbl_part_reg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_part_reg_exbhi" EntityType="Self.tbl_part_reg_exbhi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_part_reg_spon" EntityType="Self.tbl_part_reg_spon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payment_terms" EntityType="Self.tbl_payment_terms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_photos" EntityType="Self.tbl_photos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_plan_details" EntityType="Self.tbl_plan_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_plan_pagecombo" EntityType="Self.tbl_plan_pagecombo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ps" EntityType="Self.tbl_ps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_rb" EntityType="Self.tbl_rb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_site_contact" EntityType="Self.tbl_site_contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_site_terms" EntityType="Self.tbl_site_terms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_site_visits" EntityType="Self.tbl_site_visits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_social" EntityType="Self.tbl_social" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_spon_reg" EntityType="Self.tbl_spon_reg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sponsor" EntityType="Self.tbl_sponsor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_subject" EntityType="Self.tbl_subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_tax_mst" EntityType="Self.tbl_tax_mst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_user" EntityType="Self.tbl_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_venue" EntityType="Self.tbl_venue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_videos" EntityType="Self.tbl_videos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_paypal_payments" EntityType="Self.tbl_paypal_payments" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_paypal_payments].[id] AS [id], 
+    [tbl_paypal_payments].[txnid] AS [txnid], 
+    [tbl_paypal_payments].[payment_amount] AS [payment_amount], 
+    [tbl_paypal_payments].[payment_status] AS [payment_status], 
+    [tbl_paypal_payments].[itemid] AS [itemid], 
+    [tbl_paypal_payments].[createdtime] AS [createdtime], 
+    [tbl_paypal_payments].[uniq_id] AS [uniq_id]
+    FROM [dbo].[tbl_paypal_payments] AS [tbl_paypal_payments]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

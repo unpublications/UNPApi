@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Security.Claims;
 using System.Web.Http;
-
+using DoctorPortalApi.Models;
 
 namespace UNPApi.Controllers
 {
@@ -16,26 +16,26 @@ namespace UNPApi.Controllers
     public class LoginController : ApiController
     {
         ///<LoginMethod>
-       /// Login
+        /// Login
         ///</LoginMethod>
         ///
         [HttpPost]
-        public IHttpActionResult Login([FromBody] UserProfile objUser)
+        public IHttpActionResult Login([FromBody] tbl_user objUser)
         {
-          try
+            try
             {
-                using (UNPEntities db= new UNPEntities())
+                using (UNPEntities db = new UNPEntities())
                 {
-                    var obj = db.UserProfiles.Where(a => a.Email.Equals(objUser.Email) && a.Password.Equals(objUser.Password)).FirstOrDefault();
+                    var obj = db.tbl_user.Where(a => a.username.Equals(objUser.username) && a.password.Equals(objUser.password)).FirstOrDefault();
                     if (obj != null)
                     {
-                        var token = createToken(obj.Id);
+                        var token = createToken(obj.userid);
                         //return the token
                         var enMod = new LoginModel
                         {
-                            Id= obj.Id,
-                            UserName = obj.UserName,
-                            Email = obj.Email,
+                            userid = obj.userid,
+                            username = obj.username,
+                            user_mail = obj.user_mail,
                             token = token
                         };
                         return Ok(enMod);
@@ -45,9 +45,9 @@ namespace UNPApi.Controllers
                         return NotFound();
                     }
                 }
-               
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return NotFound();
             }

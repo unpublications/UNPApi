@@ -510,7 +510,7 @@
             <LoginController>
             </LoginController>
         </member>
-        <member name="M:UNPApi.Controllers.LoginController.Login(UNPApi.Models.UserProfile)">
+        <member name="M:UNPApi.Controllers.LoginController.Login(DoctorPortalApi.Models.tbl_user)">
             <LoginMethod>
              Login
             </LoginMethod>

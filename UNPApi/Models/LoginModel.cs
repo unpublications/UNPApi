@@ -10,12 +10,13 @@ namespace UNPApi.Models
     ///</Summary>
     public class LoginModel
     {
-        public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-        public string MobileNo { get; set; }
+        public int userid { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public int access { get; set; }
+        public string conf_name { get; set; }
+        public string conf_id { get; set; }
+        public string user_mail { get; set; }
         public string token { get; set; }
     }
 }

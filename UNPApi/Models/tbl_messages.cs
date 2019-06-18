@@ -7,18 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UNPApi.Models
+namespace DoctorPortalApi.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class UserProfile
+    public partial class tbl_messages
     {
-        public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-        public string MobileNo { get; set; }
+        public string msg_name { get; set; }
+        public string msg_mail { get; set; }
+        public string msg_phone { get; set; }
+        public string msg_message { get; set; }
+        public string msg_ip { get; set; }
+        public string msg_browser { get; set; }
+        public System.DateTime tr_date { get; set; }
+        public int uniq_id { get; set; }
     }
 }

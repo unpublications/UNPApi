@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UNPApi.Models
+namespace DoctorPortalApi.Models
 {
     using System;
     using System.Data.Entity;
@@ -25,6 +25,67 @@ namespace UNPApi.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UserProfile> UserProfiles { get; set; }
+        public virtual DbSet<tbl_about_city> tbl_about_city { get; set; }
+        public virtual DbSet<tbl_about_us> tbl_about_us { get; set; }
+        public virtual DbSet<tbl_addon_reg> tbl_addon_reg { get; set; }
+        public virtual DbSet<tbl_awards> tbl_awards { get; set; }
+        public virtual DbSet<tbl_cfp> tbl_cfp { get; set; }
+        public virtual DbSet<tbl_city_images> tbl_city_images { get; set; }
+        public virtual DbSet<tbl_combo> tbl_combo { get; set; }
+        public virtual DbSet<tbl_con_br> tbl_con_br { get; set; }
+        public virtual DbSet<tbl_conf_abstract> tbl_conf_abstract { get; set; }
+        public virtual DbSet<tbl_conf_subject> tbl_conf_subject { get; set; }
+        public virtual DbSet<tbl_conference> tbl_conference { get; set; }
+        public virtual DbSet<tbl_contact> tbl_contact { get; set; }
+        public virtual DbSet<tbl_contact_us> tbl_contact_us { get; set; }
+        public virtual DbSet<tbl_continent> tbl_continent { get; set; }
+        public virtual DbSet<tbl_country> tbl_country { get; set; }
+        public virtual DbSet<tbl_coupon_addon> tbl_coupon_addon { get; set; }
+        public virtual DbSet<tbl_coupon_exhibitor> tbl_coupon_exhibitor { get; set; }
+        public virtual DbSet<tbl_coupon_sponsor> tbl_coupon_sponsor { get; set; }
+        public virtual DbSet<tbl_coupon_user> tbl_coupon_user { get; set; }
+        public virtual DbSet<tbl_csumry> tbl_csumry { get; set; }
+        public virtual DbSet<tbl_down_br> tbl_down_br { get; set; }
+        public virtual DbSet<tbl_eposter> tbl_eposter { get; set; }
+        public virtual DbSet<tbl_event_buttons> tbl_event_buttons { get; set; }
+        public virtual DbSet<tbl_event_contact> tbl_event_contact { get; set; }
+        public virtual DbSet<tbl_evideo> tbl_evideo { get; set; }
+        public virtual DbSet<tbl_exbh_reg> tbl_exbh_reg { get; set; }
+        public virtual DbSet<tbl_exhibitor> tbl_exhibitor { get; set; }
+        public virtual DbSet<tbl_faq> tbl_faq { get; set; }
+        public virtual DbSet<tbl_highlights> tbl_highlights { get; set; }
+        public virtual DbSet<tbl_hotel_address> tbl_hotel_address { get; set; }
+        public virtual DbSet<tbl_hotel_images> tbl_hotel_images { get; set; }
+        public virtual DbSet<tbl_imp_date> tbl_imp_date { get; set; }
+        public virtual DbSet<tbl_imp_dates_master> tbl_imp_dates_master { get; set; }
+        public virtual DbSet<tbl_imp_links> tbl_imp_links { get; set; }
+        public virtual DbSet<tbl_mails> tbl_mails { get; set; }
+        public virtual DbSet<tbl_messages> tbl_messages { get; set; }
+        public virtual DbSet<tbl_mkt_anlys> tbl_mkt_anlys { get; set; }
+        public virtual DbSet<tbl_newsletter> tbl_newsletter { get; set; }
+        public virtual DbSet<tbl_ogc> tbl_ogc { get; set; }
+        public virtual DbSet<tbl_pack_reg> tbl_pack_reg { get; set; }
+        public virtual DbSet<tbl_package> tbl_package { get; set; }
+        public virtual DbSet<tbl_part_reg> tbl_part_reg { get; set; }
+        public virtual DbSet<tbl_part_reg_exbhi> tbl_part_reg_exbhi { get; set; }
+        public virtual DbSet<tbl_part_reg_spon> tbl_part_reg_spon { get; set; }
+        public virtual DbSet<tbl_payment_terms> tbl_payment_terms { get; set; }
+        public virtual DbSet<tbl_photos> tbl_photos { get; set; }
+        public virtual DbSet<tbl_plan_details> tbl_plan_details { get; set; }
+        public virtual DbSet<tbl_plan_pagecombo> tbl_plan_pagecombo { get; set; }
+        public virtual DbSet<tbl_ps> tbl_ps { get; set; }
+        public virtual DbSet<tbl_rb> tbl_rb { get; set; }
+        public virtual DbSet<tbl_site_contact> tbl_site_contact { get; set; }
+        public virtual DbSet<tbl_site_terms> tbl_site_terms { get; set; }
+        public virtual DbSet<tbl_site_visits> tbl_site_visits { get; set; }
+        public virtual DbSet<tbl_social> tbl_social { get; set; }
+        public virtual DbSet<tbl_spon_reg> tbl_spon_reg { get; set; }
+        public virtual DbSet<tbl_sponsor> tbl_sponsor { get; set; }
+        public virtual DbSet<tbl_subject> tbl_subject { get; set; }
+        public virtual DbSet<tbl_tax_mst> tbl_tax_mst { get; set; }
+        public virtual DbSet<tbl_user> tbl_user { get; set; }
+        public virtual DbSet<tbl_venue> tbl_venue { get; set; }
+        public virtual DbSet<tbl_videos> tbl_videos { get; set; }
+        public virtual DbSet<tbl_paypal_payments> tbl_paypal_payments { get; set; }
     }
 }
