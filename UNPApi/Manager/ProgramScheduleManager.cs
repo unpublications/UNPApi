@@ -62,6 +62,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getProgramScheduleById(id);
 
+                db.tbl_ps.Attach(list);
                 db.tbl_ps.Remove(list);
                 db.SaveChanges();
 

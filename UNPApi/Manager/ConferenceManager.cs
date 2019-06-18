@@ -65,6 +65,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getConferenceById(id);
 
+                db.tbl_conference.Attach(list);
                 db.tbl_conference.Remove(list);
                 db.SaveChanges();
 

@@ -62,6 +62,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getOrganizingCommiteById(id);
 
+                db.tbl_ogc.Attach(list);
                 db.tbl_ogc.Remove(list);
                 db.SaveChanges();
 

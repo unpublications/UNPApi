@@ -62,6 +62,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getAwardsById(id);
 
+                db.tbl_awards.Attach(list);
                 db.tbl_awards.Remove(list);
                 db.SaveChanges();
 

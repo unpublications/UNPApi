@@ -62,6 +62,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getEPosterById(id);
 
+                db.tbl_eposter.Attach(list);
                 db.tbl_eposter.Remove(list);
                 db.SaveChanges();
 

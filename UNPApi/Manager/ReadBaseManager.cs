@@ -62,6 +62,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getReadBaseById(id);
 
+                db.tbl_rb.Attach(list);
                 db.tbl_rb.Remove(list);
                 db.SaveChanges();
 

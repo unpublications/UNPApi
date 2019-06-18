@@ -62,6 +62,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getEVideoById(id);
 
+                db.tbl_evideo.Attach(list);
                 db.tbl_evideo.Remove(list);
                 db.SaveChanges();
 

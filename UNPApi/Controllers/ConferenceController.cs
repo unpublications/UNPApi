@@ -30,7 +30,7 @@ namespace DoctorPortalApi.Controllers
         }
 
         // POST api/<controller>
-        public IHttpActionResult Post([FromBody]tbl_conference value)
+        public IHttpActionResult Post(tbl_conference value)
         {
             var conf = ConferenceManager.saveConference(value);
 

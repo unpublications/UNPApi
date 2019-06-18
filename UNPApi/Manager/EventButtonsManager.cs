@@ -62,6 +62,7 @@ namespace DoctorPortalApi.Manager
             {
                 var list = getEventButtonsById(id);
 
+                db.tbl_event_buttons.Attach(list);
                 db.tbl_event_buttons.Remove(list);
                 db.SaveChanges();
 
