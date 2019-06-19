@@ -350,7 +350,6 @@ F:\Pradeep\UNPAppAPI\UNPApi\bin\Microsoft.AI.DependencyCollector.xml
 F:\Pradeep\UNPAppAPI\UNPApi\bin\Microsoft.AI.WindowsServer.xml
 F:\Pradeep\UNPAppAPI\UNPApi\bin\Microsoft.AI.Web.xml
 F:\Pradeep\UNPAppAPI\UNPApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\Pradeep\UNPAppAPI\UNPApi\obj\Debug\UNPApi.csprojResolveAssemblyReference.cache
 F:\Pradeep\UNPAppAPI\UNPApi\obj\Debug\DoctorPortalApi.dll
 F:\Pradeep\UNPAppAPI\UNPApi\obj\Debug\DoctorPortalApi.pdb
 C:\Project\Event_Management\UNPApi\UNPApi\bin\ApplicationInsights.config
